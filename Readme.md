@@ -1,6 +1,6 @@
 # Discoliam 2024
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5a9f23c5-b054-416f-9631-b2a28c9c55b0/deploy-status)](https://app.netlify.com/sites/discoliam-2022/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8b355049-257c-4cde-a867-73a71faeeb44/deploy-status)](https://app.netlify.com/projects/discoliam2024/deploys)
 
 The website for [Discoliam.com](https://discoliam.com/).
 
