@@ -1,0 +1,85 @@
+---
+title: 'Contact | Discoliam'
+description: 'Get in touch with Liam Richardson about front-end development, accessibility or performance work on your project.'
+pageTitle: Get in touch
+layout: 'layouts/full-width.html'
+tags: header
+eleventyNavigation:
+  key: Contact
+  order: 6
+---
+
+
+<div class="Container">
+
+  <div class="Page__Header">
+    <div>
+      <h1>{{pageTitle}}</h1>
+      <p class="Lead">If you've got a project in mind and want to chat more, get in touch and I'll get back to you ASAP. You can use the form below, or any of my social channels, even LinkedIn if you really have to.</p>
+    </div>
+  </div>
+
+  <div class="Contact__Grid">
+    <div class="Contact__Form">
+      <form class="Contact__FormTag" id="ContactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+        <div class="sr-only">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </div>
+
+        <div class="InputWrap">
+          <label for="name">Name: <abbr title="required">*</abbr></label>
+          <input type="text" name="name" placeholder="Firstname Surname" required />
+        </div>
+
+        <div class="InputWrap">
+          <label for="email">Email: <abbr title="required">*</abbr></label>
+          <input type="email" name="email" required placeholder="hello@example.com" />
+        </div>
+
+        <div class="InputWrap">
+          <label for="message">Message: <abbr title="required">*</abbr></label>
+          <textarea name="message" placeholder="Let me know some brief details about your project e.g timelines, budgets, existing tech stack, etc." required></textarea>
+        </div>
+
+        <div data-netlify-recaptcha="true" class="InputWrap">
+        </div>
+
+        <input type="hidden" name="subject" value="Enquiry from Discoliam Website" />
+
+        <button type="submit" class="Button">Send</button>
+
+      </form>
+      <div class="Contact__Message">
+        <p class="Contact__MessageText Contact__MessageText--success">
+          Thanks for getting in touch! I'll get back to you as soon as I can.
+        </p>
+        <p class="Contact__MessageText Contact__MessageText--error">
+          Oh no! Something went wrong. Please refresh and try again.
+        </p>
+      </div>
+    </div>
+    <div class="Contact__Info">
+      <ul class="Contact__List">
+        {% for contact in contacts %}
+          {% assign svg_name = contact.name | slugify %}
+          {% if contact.name == "Email" %}
+            {% assign protocol = "mailto:" %}
+          {% else %}
+           {% assign protocol = "" %}
+          {% endif %}
+          <li>
+            <a class="Contact__Link" href="{{protocol}}{{contact.url | url}}" rel="{% if contact.rel %}{{contact.rel}}{% endif %} {% if contact.target %}noopener{% endif %}" {% if contact.target %}target="{{contact.target}}"{% endif %} >
+              <span class="Contact__Icon">{% svg svg_name %}</span>
+              <div class="Contact__Item">
+                <span class="Contact__Name h6">{{ contact.name }}</span>
+                <span class="Contact__Url">{{ contact.url }}</span>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+:root {
+  /* colo(u)rs */
+  --white: #ffffff;
+  --off-white: #fffbe9;
+  --navy: #002726;
+  --teal: #005c5a;
+  --pastel-red: #ef4744;
+  --macaroni-and-cheese: #fdbe27;
+
+  /* Main Colours */
+  --color-light: var(--off-white);
+  --color-dark: var(--navy);
+  --color-main: var(--teal);
+  --color-alt: var(--pastel-red);
+  --color-secondary: var(--macaroni-and-cheese);
+
+  /* Fonts */
+  --font-family-body: 'Merriweather', serif;
+  --font-family-heading: 'Lato', sans-serif;
+
+  /* Spacing */
+  --gap: 24px;
+  --border-radius: 4px;
+
+  --spacing: 40px;
+
+  /* font sizes */
+  /* --px-to-rem: calc((var(--pixels) / 16) * 1rem); */
+  --font-size--h1: calc((54 / 16) * 1rem); /* 56px */
+  --font-size--h2: calc((40 / 16) * 1rem); /* 32px */
+  --font-size--h3: calc((32 / 16) * 1rem); /* 26px */
+  --font-size--h4: calc((26 / 16) * 1rem); /* 23px */
+  --font-size--h5: calc((23 / 16) * 1rem); /* 22px */
+  --font-size--h6: calc((16 / 16) * 1rem); /* 16px */
+  --font-size--base: calc((16 / 16) * 1rem); /* 16px */
+  --font-size--lead: calc((20 / 16) * 1rem); /* 16px */
+
+  /* Transitions */
+  --global-transition: 150ms ease;
+}
+
+@media (--mq-tablet-and-up) {
+  :root {
+    --font-size--h1: calc((64 / 16) * 1rem); /* 56px */
+    --font-size--h2: calc((56 / 16) * 1rem); /* 40px */
+    --font-size--h3: calc((40 / 16) * 1rem); /* 32px */
+    --font-size--h4: calc((32 / 16) * 1rem); /* 26px */
+    --font-size--h5: calc((26 / 16) * 1rem); /* 21px */
+    --font-size--h6: calc((21 / 16) * 1rem); /* 18px */
+    --font-size--base: calc((18 / 16) * 1rem); /* 18px */
+    --font-size--lead: calc((24 / 16) * 1rem); /* 16px */
+    --spacing: 60px;
+  }
+}

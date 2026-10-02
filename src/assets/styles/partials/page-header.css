@@ -1,0 +1,23 @@
+.Page__Header {
+  margin-bottom: var(--spacing);
+  @media (--mq-tablet-and-up) {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+    & div {
+      grid-column: 1 / span 8;
+    }
+  }
+}
+
+.Page__Header--centered {
+  text-align: center;
+  & h1 {
+    margin-bottom: 0;
+  }
+  @media (--mq-tablet-and-up) {
+    & div {
+      grid-column: 3 / span 8;
+    }
+  }
+}

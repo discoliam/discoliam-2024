@@ -1,0 +1,53 @@
+.About__ImageWrapper {
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  position: relative;
+  width: 100%;
+
+  & img {
+    position: relative;
+    z-index: 4;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-alt);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transform: rotate(-4deg) translate(-2%, 2%);
+    z-index: 4;
+    border-radius: var(--border-radius);
+    transform-origin: bottom right;
+  }
+
+  &::after {
+    transform: rotate(-8deg) translate(-3%, 3%);
+    background-color: var(--color-secondary);
+    z-index: 3;
+  }
+}
+
+.AboutGrid {
+  padding-bottom: var(--gap);
+}
+@media (--mq-tablet-and-up) {
+  .AboutGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+  }
+
+  .AboutCol--left {
+    position: relative;
+  }
+  .About__ImageWrapper {
+    position: sticky;
+    top: var(--gap);
+  }
+}

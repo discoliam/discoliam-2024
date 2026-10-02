@@ -1,0 +1,32 @@
+{% assign navPages = collections.header | eleventyNavigation %}
+
+<header class='Header'>
+  <div class='Container'>
+    <a class='Header__Site-Title' href='/' aria-label='{{ site.name }}'>
+      {% svg "logo" %}
+    </a>
+    <nav class='Header__Nav' data-menu='closed'>
+      <ul class='MainNav'>
+        {% for entry in navPages %}
+          <li class='MainNav__Item'>
+            <a
+              class='MainNav__Link'
+              href='{{ entry.url | url }}'
+              {% if entry.url == page.url %}
+                aria-current='true'
+              {% endif %}
+            >
+              {{- entry.title -}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <button class='Header__NavToggle' aria-expanded='false' aria-label='Open site navigation' aria-haspopup='true'>
+      <b aria-hidden></b>
+      <b aria-hidden></b>
+      <b aria-hidden></b>
+    </button>
+  </div>
+</header>

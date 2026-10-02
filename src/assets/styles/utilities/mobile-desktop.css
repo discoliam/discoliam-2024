@@ -1,0 +1,11 @@
+.hide-on-desktop {
+  @media (--mq-tablet-and-up) {
+    display: none;
+  }
+}
+
+.hide-on-mobile {
+  @media (--mq-phone) {
+    display: none;
+  }
+}

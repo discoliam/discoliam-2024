@@ -1,0 +1,55 @@
+{% layout 'layouts/base.liquid' %}
+
+{%- block content -%}
+
+<div class='Container'>
+  <div class='Page__Header Page__Header--centered'>
+    <div>
+      <h1>{{ pageTitle }}</h1>
+    </div>
+  </div>
+
+  {% image hero, pageTitle, "Portfolio__Image" %}
+
+  <div class='Portfolio__Intro'>
+    <div class='Project__Info'>
+      <dl>
+        <dt>Project</dt>
+        <dd>{{ pageTitle }}</dd>
+        {% if eleventyNavigation.client %}
+          <dt>Client</dt>
+          <dd>{{ eleventyNavigation.client }}</dd>
+        {% endif %}
+        {% if year %}
+          <dt>Year</dt>
+          <dd>{{ year }}</dd>
+        {% endif %}
+        {% if eleventyNavigation.tags %}
+          <dt>Tech Stack</dt>
+          <dd>
+            {% for tag in eleventyNavigation.tags %}
+              <span class='Label'>{{ tag }}</span>
+            {% endfor %}
+          </dd>
+        {% endif %}
+        {% if website %}
+          <dt>Website</dt>
+          <dd>
+            <a href='{{website}}' target='_blank' rel='noopener'>
+              {{- website }}
+              <span class='sr-only'> - Opens in new window</span></a
+            >
+          </dd>
+        {% endif %}
+      </dl>
+    </div>
+    <div class='Project__Excerpt'>
+      <div class='ContentWrapper'>
+        <p class='Lead'>{{ eleventyNavigation.excerpt }}</p>
+        {{- content -}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- endblock -%}

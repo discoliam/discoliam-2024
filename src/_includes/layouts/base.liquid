@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang='en-GB'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    {%- if title %}{% assign metaTitle = title %}{% else %}{% assign metaTitle = site.title %}{% endif -%}
+    {%- if pagination.pageNumber > 0 -%}
+      {%- assign pageNum = pagination.pageNumber | plus: 1 -%}
+      {%- assign metaTitle = metaTitle | append: ' – Page ' | append: pageNum -%}
+    {%- endif -%}
+    {%- if description %}{% assign metaDescription = description %}{% else %}{% assign metaDescription = site.description %}{% endif -%}
+    {%- assign canonicalUrl = site.url | append: page.url -%}
+    <title>{{ metaTitle }}</title>
+    <meta name='description' content='{{ metaDescription | escape }}'>
+    <meta name='author' content='{{ site.author }}'>
+    <link rel='canonical' href='{{ canonicalUrl }}'>
+    {% if noindex %}<meta name='robots' content='noindex, follow'>{% endif %}
+    <meta name='generator' content='{{ eleventy.generator }}'>
+
+    <link rel='preload' href='/assets/fonts/merriweather-v30-latin-300.woff2' as='font' type='font/woff2' crossorigin>
+    <link rel='preload' href='/assets/fonts/lato-v24-latin-900.woff2' as='font' type='font/woff2' crossorigin>
+    <link rel='preload' href='/assets/style.css' as='style'>
+    <link rel='stylesheet' href='/assets/style.css'>
+
+    <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicon/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='/assets/favicon/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='/assets/favicon/favicon-16x16.png'>
+    <link rel='manifest' href='/assets/favicon/site.webmanifest'>
+
+    <meta property='og:title' content='{{ metaTitle | escape }}'>
+    <meta property='og:site_name' content='{{ site.name }}'>
+    <meta property='og:url' content='{{ canonicalUrl }}'>
+    <meta property='og:description' content='{{ metaDescription | escape }}'>
+    <meta property='og:type' content='website'>
+    <meta property='og:locale' content='{{ site.locale }}'>
+    <meta property='og:image' content='{{ site.url }}/assets/favicon/og.png'>
+    <meta property='og:image:width' content='1200'>
+    <meta property='og:image:height' content='630'>
+    <meta property='og:image:alt' content='{{ site.title }}'>
+
+    <meta name='twitter:card' content='summary_large_image'>
+    <meta name='twitter:site' content='@discoliam'>
+    <meta name='twitter:title' content='{{ metaTitle | escape }}'>
+    <meta name='twitter:description' content='{{ metaDescription | escape }}'>
+    <meta name='twitter:image' content='{{ site.url }}/assets/favicon/og.png'>
+
+    {% if page.url == '/' %}
+      <script type='application/ld+json'>
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "{{ site.url }}/#website",
+              "url": "{{ site.url }}/",
+              "name": "{{ site.name }}",
+              "inLanguage": "en-GB",
+              "publisher": { "@id": "{{ site.url }}/#person" }
+            },
+            {
+              "@type": "Person",
+              "@id": "{{ site.url }}/#person",
+              "name": "{{ site.author }}",
+              "alternateName": "{{ site.name }}",
+              "url": "{{ site.url }}/",
+              "image": "{{ site.url }}/assets/favicon/og.png",
+              "jobTitle": "{{ site.jobTitle }}",
+              "email": "mailto:{{ site.email }}",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bristol",
+                "addressCountry": "GB"
+              },
+              "knowsAbout": ["Front-end development", "Web accessibility", "Web performance", "Design systems", "CSS", "JavaScript", "Vue", "Eleventy", "WordPress", "Shopify"],
+              "sameAs": [
+                {%- for contact in contacts -%}
+                  {%- unless contact.name == 'Email' -%}"{{ contact.url }}"{% unless forloop.last %}, {% endunless %}{%- endunless -%}
+                {%- endfor -%}
+              ]
+            }
+          ]
+        }
+      </script>
+    {% endif %}
+
+    <meta name='theme-color' content='#fffbe9'>
+    <meta name='msapplication-TileColor' content='#255B59'>
+  </head>
+  <body>
+    <a href='#main-content' class='Button sr-only'>Skip to main content</a>
+    {% svgsprite %}
+    {% include 'header.liquid' %}
+    {% block content %}
+    {% endblock %}
+    {% include 'footer.liquid' %}
+    <script src='/assets/main.js'></script>
+    <script src='https://unpkg.com/website-carbon-badges@1.1.3/b.min.js' async defer></script>
+  </body>
+</html>

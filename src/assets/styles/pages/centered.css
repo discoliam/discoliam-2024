@@ -1,0 +1,31 @@
+.Page--centered {
+  margin-bottom: var(--spacing);
+}
+
+.Page--centered img {
+  border-radius: var(--border-radius);
+}
+
+@media (--mq-tablet-and-up) {
+  .Page--centered > .Container {
+    display: grid;
+    column-gap: var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .Page--centered .ContentWrapper {
+    grid-column: 2 / span 10;
+  }
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .Page--centered .ContentWrapper {
+    grid-column: 3 / span 8;
+  }
+}
+
+@media (--mq-lap-and-up) {
+  .Page--centered .ContentWrapper {
+    grid-column: 4 / span 6;
+  }
+}

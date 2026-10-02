@@ -1,0 +1,17 @@
+.ContentWrapper picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ContentWrapper picture,
+.ContentWrapper p,
+.ContentWrapper ul {
+  margin-bottom: 2em;
+}
+
+.ContentWrapper picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,64 @@
+---
+title: 'Liam Richardson – Freelance Front-End Developer in Bristol, UK'
+description: 'Liam Richardson is a front-end developer and development lead in Bristol, UK, with 14 years building fast, accessible websites, design systems and installations.'
+layout: 'layouts/full-width.html'
+tags: header
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+<div class='Container'>
+  <div class='Introduction'>
+    <div class='Introduction__Content'>
+      <h1>Hi, I'm Liam Richardson - a Front-End Developer in Bristol, UK</h1>
+      {% image "./src/assets/images/photo.jpg", "Photograph of Liam Richardson", "Introduction__Image", "100vw", "eager" %}
+      <p>
+        Thanks to a misguided choice of nickname one summer when I was 12 years old, online I go by
+        <strong>Discoliam</strong>.
+      </p>
+      <p>
+        I'm a front-end developer currently based in Bristol, UK. For <strong>16 years</strong> I've built award-winning
+        <strong>Websites</strong>, <strong>Design Systems</strong>, and <strong>Installations</strong> for clients
+        around the globe.
+      </p>
+      <p>I'm the Development Lead at <a href="https://futurekings.co.uk">FutureKings</a>, a creative branding agency working with start-ups and founder-led businesses.</p>
+    </div>
+  </div>
+
+  <div class='Services'>
+    <div class='Services__Grid'>
+      <h2 class='Services__Title'>Services</h2>
+      <div class='Services__Text'>
+        <p class='Lead '>
+          As a developer, I like to use technology to help as best I can. I focus on <strong>performance</strong>,
+          <strong>accessibility</strong> and the <strong>environmental impact</strong> of digital products. I can help
+          you with:
+        </p>
+      </div>
+      <div class='Services__List'>
+        <ul class='Lead Heading'>
+          <li>UX Design & Digital Strategy</li>
+          <li>Technical Planning & Front-End Architecture</li>
+          <li>Front-End Web Development</li>
+          <li>Performance & Accessibility Consultancy</li>
+        </ul>
+        <a href='/services/' class='Button'>Find out more about my front-end development services</a>
+      </div>
+    </div>
+  </div>
+
+  <div class='Projects'>
+    <h2>Potted History of Projects & Clients</h2>
+    <ul class='Logo__List'>
+      {% for project in index.projects %}
+        <li class='Logo__Item'>
+          {% assign svg_name = project | slugify %}
+          {% svg svg_name %}
+          <span class='sr-only'>{{ project }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <a href='/portfolio/' class='Button'>View my Portfolio</a>
+  </div>
+</div>

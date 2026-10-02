@@ -1,0 +1,9 @@
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+  buildDir = "dist"
+  exclude = [
+    "./dist/404.html",
+    "./dist/styleguide/index.html",
+    "./dist/referrals/index.html",
+  ]

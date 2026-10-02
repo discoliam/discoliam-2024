@@ -1,0 +1,79 @@
+---
+layout: 'layouts/full-width.html'
+title: Front-End Development Portfolio | Discoliam
+pageTitle: Portfolio
+description: Selected front-end development projects by Liam Richardson, including Shopify, WordPress, Vue and Eleventy builds, design systems and accessibility work.
+tags: header
+eleventyNavigation:
+  key: Portfolio
+  order: 2
+---
+<div class='Container'>
+  <div class='Page__Header'>
+    <div>
+      <h1>Portfolio</h1>
+      <p class='Lead'>
+        Here's a selection of my work from the past few years. There's a mix of freelance projects and work from
+        full-time roles. I've tried to link to anything that is still online, but contrary to most twitter
+        controversies, the internet sometimes forgets.
+      </p>
+    </div>
+  </div>
+  <ul class='Portfolio__Nav PortfolioNav'>
+    {% assign navPages = collections.all | eleventyNavigation: 'Portfolio' %}
+    {%- for entry in navPages %}
+      {% assign entrySlug = entry.title | slugify %}
+      <li class='PortfolioNav__Item'>
+        <div class='PortfolioNav__Image'>
+          {% capture portfolioImage %}./src/assets/images/bg-{{entrySlug}}.jpg{% endcapture %}
+          {% image portfolioImage, entry.title %}
+          <h2>
+            {{ entry.title }}
+          </h2>
+        </div>
+        <div class='PortfolioNav__Content'>
+          <p class='PortfolioNav__Client'>
+            <strong>Client:</strong> {{ entry.client -}}
+            <br>
+            <strong>Services:</strong> {{ entry.services }}
+          </p>
+          <ul class='PortfolioNav__Tags'>
+            {% for tag in entry.tags %}
+              <li class='Label'>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          {{ entry.excerpt }}
+        </div>
+        {% if entry.website -%}
+          <a class='PortfolioNav__Link' href='{{entry.website}}' target='_blank' rel='noopener'>
+            View live site
+            <span class='sr-only'> - Opens in new window</span>
+            {% svg "external" %}
+          </a>
+        {%- endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h3>A Potted history of Projects</h3>
+  <ul class='Logo__List'>
+    {% for project in portfolio.projects %}
+      <li class='Logo__Item'>
+        {% assign svg_name = project | slugify %}
+        {% svg svg_name %}
+        <span class='sr-only'>{{ project }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h3>A Selection of Clients</h3>
+  <ul class='Logo__List'>
+    {% for client in portfolio.clients %}
+      <li class='Logo__Item'>
+        {% assign svg_name = client | slugify %}
+        {% svg svg_name %}
+        <span class='sr-only'>{{ client }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

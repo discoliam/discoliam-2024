@@ -1,0 +1,95 @@
+.Contact__Grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+
+.Contact__Message {
+  display: none;
+  opacity: 0;
+  transition: all var(--global-transition);
+  &.Contact__Message--active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.Contact__MessageText {
+  display: none;
+  padding: var(--gap);
+  background-color: var(--color-alt);
+  color: var(--color-light);
+  border-radius: var(--border-radius);
+}
+
+.Contact__MessageText--success {
+  background-color: var(--color-main);
+}
+
+.Contact__List {
+  list-style-type: none;
+  & li {
+    margin-bottom: 2em;
+  }
+}
+
+.Contact__Link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  &::after {
+    display: none;
+  }
+}
+
+.Contact__Icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  border-radius: 40px;
+  flex: 0 0 40px;
+  & svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    color: var(--color-secondary);
+  }
+}
+
+.Contact__Name {
+  display: block;
+  color: var(--color-main);
+  margin: 0 0 0.2em 0;
+}
+
+.Contact__Url {
+  color: var(--color-main);
+  opacity: 0.8;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 300;
+  word-break: break-word;
+}
+
+.Contact__Link:hover .Contact__Url {
+  text-decoration: underline;
+  text-decoration-color: var(--color-alt);
+}
+
+@media (--mq-tablet-and-up) {
+  .Contact__Grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .Contact__Form {
+    grid-column: 1 / span 6;
+  }
+
+  .Contact__Info {
+    grid-column: 8 / span 5;
+  }
+}

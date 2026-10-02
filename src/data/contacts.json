@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Email",
+    "url": "hello@discoliam.com",
+    "emoji": "📧"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/discoliam/",
+    "target": "_blank",
+    "emoji": "📷"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/liamrichardson/",
+    "target": "_blank",
+    "emoji": "📈"
+  },
+  {
+    "name": "Github",
+    "url": "https://github.com/discoliam/",
+    "target": "_blank",
+    "emoji": "🗂"
+  },
+  {
+    "name": "Mastodon",
+    "url": "https://mastodon.social/@Discoliam",
+    "target": "_blank",
+    "rel": "me",
+    "emoji": "🐘"
+  }
+]

@@ -1,0 +1,85 @@
+---
+layout: 'layouts/full-width.html'
+title: About Liam Richardson – Front-End Developer | Discoliam
+pageTitle: About
+description: Liam Richardson is a front-end developer and technical lead in Bristol, UK, with 14 years building websites, design systems and applications.
+tags: header
+eleventyNavigation:
+  key: About
+  order: 4
+---
+<div class='Container'>
+  <div class='AboutGrid'>
+    <div class='AboutCol AboutCol--left'>
+      <h1>About Me</h1>
+      <p class='Lead'>
+        I don't really like talking about myself, but, needs must. If you only read one page about who I am and what I
+        do this year, make it this one.
+      </p>
+
+      <div class='About__ImageWrapper'>
+        {% image "./src/assets/images/photo.jpg", "Photograph of Liam Richardson" %}
+      </div>
+    </div>
+    <div class='AboutCol'>
+      <h2 class='h3'>tl;dr</h2>
+      <p>
+        I'm a front-end developer and technical lead with over 14 years of experience. I'm passionate about front-end
+        development, web performance, accessibility (a11y), pizza, and shouty music.
+      </p>
+
+      <h2 class='h3'>Not long Enough</h2>
+
+      <p>
+        For about 14 years or so I've been building Websites, Applications, Digital Installations, and some other random
+        bits in-between. This has been about a 50/50 split between full time at agencies, and as a freelancer working
+        for one-person organisations, to multi-million dollar startups and everyone in-between.
+      </p>
+
+      <p>
+        Over the years I've done a little bit of everything, but these days I've found myself working on modular-based
+        websites, design systems, or startups. Most of my work over the last year or so has been based on WordPress or
+        Fractal, and a mix of different Static Site Generators.
+      </p>
+
+      <p>
+        I've played an active part in all stages of the project lifecycle. Working closely with Designers and Clients
+        directly to define project goals and deliverables, to working with different teams of designers and developers
+        to build those deliverables. I've joined projects at the very start of the processes, and have also been
+        parachuted in days from launch to fix those last-minute bugs or add new features.
+      </p>
+
+      <h2 class='h3'>Where in the world</h2>
+
+      <p>
+        I'm currently living in <del>sunny</del> rainy
+        <a href='https://en.wikipedia.org/wiki/Bristol' rel='noopener' target='_blank'>Bristol, UK</a> after spending
+        just under 4 years in <del>sunny</del> rainy
+        <a href='https://www.instagram.com/gurtwest/' rel='noopener' target='_blank'>Vancouver, BC</a>. I grew up in the
+        town of <a href='https://www.instagram.com/p/BWDnE04Dzun/' rel='noopener' target='_blank'>Fleet</a>, went to
+        <a href='https://www.uwe.ac.uk/' rel='noopener' target='_blank'>university</a> in Bristol and somehow always end
+        up back here.
+      </p>
+      <p>
+        I've also worked in Europe, Australia, and the United States for some shorter stints of time over the years.
+      </p>
+
+      <h2>On the World Wide Web</h2>
+
+      {% for contact in contacts %}
+        <li>
+          <a
+            href='{{protocol}}{{contact.url | url}}'
+            rel='{% if contact.rel %}{{contact.rel}}{% endif %} {% if contact.target %}noopener{% endif %}'
+            {% if contact.target %}
+              target='{{contact.target}}' rel='noopener'
+            {% endif %}
+          >
+            {{ contact.emoji }}
+            {{ contact.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </div>
+  </div>
+</div>

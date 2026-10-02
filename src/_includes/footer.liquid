@@ -1,0 +1,63 @@
+{% assign navPages = collections.footer | eleventyNavigation %}
+
+<footer class='Footer'>
+  <div class='Container Footer__Content'>
+    <div class='Footer__Social'>
+      <h2 class='Subtitle'>Get in touch</h2>
+      <p>
+        Give me a bell on any of the channels below (even LinkedIn if you really have to...) and I'll get back to you
+        asap.
+      </p>
+      <nav class='SocialNav'>
+        {% for contact in contacts %}
+          <a
+            href='{{protocol}}{{contact.url | url}}'
+            rel='{% if contact.rel %}{{contact.rel}}{% endif %} {% if contact.target %}noopener{% endif %}'
+            {% if contact.target %}
+              target='{{contact.target}}' rel='noopener'
+            {% endif %}
+          >
+            {% assign svg_name = contact.name | slugify %}
+            {% svg svg_name %}
+            <span class='sr-only'>
+              {{- contact.name }}
+              {% if contact.target %}- Opens in new Tab{% endif -%}
+            </span>
+          </a>
+        {% endfor %}
+      </nav>
+    </div>
+
+
+
+    <div class='Footer__Nav'>
+      <h2 class='Subtitle'>Find out more</h2>
+      <ul class='FooterNav'>
+        {% for entry in navPages %}
+          <li class='FooterNav__Item'>
+            <a class='FooterNav__Link' href='{{ entry.url | url }}'>
+              {{ entry.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class='Container Footer__Details'>
+    <p class='Footer__Copy Subtitle'>&copy; Liam Richardson.</p>
+    <p class='Footer__Colophon'>
+      Built using
+      <a href='{{ 'https://www.11ty.dev/' | url }}' target='_blank' rel='noopener'
+        >11ty<span class='sr-only'> - Opens in new window</span></a
+      >. Hosted on
+      <a href='{{ 'https://www.netlify.com/' | url }}' target='_blank' rel='noopener'
+        >Netlify<span class='sr-only'> - Opens in new window</span></a
+      >. DNS by
+      <a href='{{ 'https://dnsimple.com/referrals?account_id=76379' | url }}' target='_blank' rel='noopener'
+        >DNSimple <span class='sr-only'> - Opens in new window</span></a
+      >.
+    </p>
+    <div id='wcb' class='carbonbadge wcb-d'></div>
+  </div>
+</footer>
