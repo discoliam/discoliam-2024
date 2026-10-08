@@ -29,6 +29,10 @@
   position: relative;
   display: block;
   aspect-ratio: 800/450;
+  text-decoration: none;
+  &:after {
+    display: none;
+  }
 }
 
 .PortfolioNav__Image img {
@@ -40,7 +44,7 @@
   left: 0;
 }
 
-.PortfolioNav__Image h2 {
+.PortfolioNav__Title {
   text-decoration: none;
   z-index: 10;
   position: relative;
@@ -90,9 +94,31 @@
   }
 }
 
+.PortfolioNav__Link + .PortfolioNav__Link {
+  margin-top: 0.5em;
+}
+
 .PortfolioNav__Link svg {
   display: block;
   width: 1em;
   height: 1em;
   transition: all var(--global-transition);
+}
+
+/* Related projects, at the bottom of each case study */
+.RelatedWork {
+  border-top: solid 1px var(--color-main);
+  padding: var(--spacing) 0;
+}
+
+.PortfolioNav--related {
+  margin-bottom: var(--spacing);
+
+  @media (--mq-lap-and-up) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  & .PortfolioNav__Title {
+    font-size: 36px;
+  }
 }

@@ -47,18 +47,32 @@ eleventyNavigation:
     </div>
   </div>
 
-  <div class='Projects'>
-    <h2>Potted History of Projects & Clients</h2>
-    <ul class='Logo__List'>
-      {% for project in index.projects %}
-        <li class='Logo__Item'>
-          {% assign svg_name = project | slugify %}
-          {% svg svg_name %}
-          <span class='sr-only'>{{ project }}</span>
-        </li>
+  <section class='RecentProjects' aria-labelledby='recent-projects-title'>
+
+    <div class="RecentProjects__Header">
+      <h2 id='recent-projects-title'>Recent projects</h2>
+      <a href='/portfolio/' class='Button'>View the Portfolio</a>
+    </div>
+
+    {% assign portfolioEntries = collections.all | eleventyNavigation: 'Portfolio' %}
+    <ul class='PortfolioNav PortfolioNav--related'>
+      {% for entry in portfolioEntries limit: 3 %}
+        {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
       {% endfor %}
     </ul>
 
-    <a href='/portfolio/' class='Button'>View my Portfolio</a>
-  </div>
+  </section>
+
+
+  <h3>A Potted history of Projects</h3>
+  <ul class='Logo__List'>
+    {% for project in portfolio.projects %}
+      <li class='Logo__Item'>
+        {% assign svg_name = project | slugify %}
+        {% svg svg_name %}
+        <span class='sr-only'>{{ project }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+
 </div>

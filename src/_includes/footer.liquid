@@ -1,4 +1,20 @@
 {% assign navPages = collections.footer | eleventyNavigation %}
+{% assign servicePages = collections.all | eleventyNavigation: 'Services' %}
+
+
+<div class="PreFooter">
+  <div class="Container">
+    <div class="PreFooter__Content">
+      <h2>Let's talk about your project</h2>
+      <p class="Lead">
+        Whether it's a brand new build, a rescue job or a second pair of eyes on an existing site, I'm always up for a
+        chat.
+      </p>
+      <a href='/contact/' class='Button'>Get in touch</a>
+    </div>
+  </div>
+</div>
+
 
 <footer class='Footer'>
   <div class='Container Footer__Content'>
@@ -10,6 +26,7 @@
       </p>
       <nav class='SocialNav'>
         {% for contact in contacts %}
+          {% if contact.name == 'Email' %}{% assign protocol = 'mailto:' %}{% else %}{% assign protocol = '' %}{% endif %}
           <a
             href='{{protocol}}{{contact.url | url}}'
             rel='{% if contact.rel %}{{contact.rel}}{% endif %} {% if contact.target %}noopener{% endif %}'
@@ -30,17 +47,32 @@
 
 
 
-    <div class='Footer__Nav'>
-      <h2 class='Subtitle'>Find out more</h2>
-      <ul class='FooterNav'>
-        {% for entry in navPages %}
-          <li class='FooterNav__Item'>
-            <a class='FooterNav__Link' href='{{ entry.url | url }}'>
-              {{ entry.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+    <div class='Footer__Navs'>
+      <div class='Footer__Nav'>
+        <h2 class='Subtitle'>Services</h2>
+        <ul class='FooterNav'>
+          {% for entry in servicePages %}
+            <li class='FooterNav__Item'>
+              <a class='FooterNav__Link' href='{{ entry.url | url }}'>
+                {{ entry.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class='Footer__Nav'>
+        <h2 class='Subtitle'>Find out more</h2>
+        <ul class='FooterNav'>
+          {% for entry in navPages %}
+            <li class='FooterNav__Item'>
+              <a class='FooterNav__Link' href='{{ entry.url | url }}'>
+                {{ entry.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 

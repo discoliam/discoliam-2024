@@ -22,36 +22,7 @@ eleventyNavigation:
   <ul class='Portfolio__Nav PortfolioNav'>
     {% assign navPages = collections.all | eleventyNavigation: 'Portfolio' %}
     {%- for entry in navPages %}
-      {% assign entrySlug = entry.title | slugify %}
-      <li class='PortfolioNav__Item'>
-        <div class='PortfolioNav__Image'>
-          {% capture portfolioImage %}./src/assets/images/bg-{{entrySlug}}.jpg{% endcapture %}
-          {% image portfolioImage, entry.title %}
-          <h2>
-            {{ entry.title }}
-          </h2>
-        </div>
-        <div class='PortfolioNav__Content'>
-          <p class='PortfolioNav__Client'>
-            <strong>Client:</strong> {{ entry.client -}}
-            <br>
-            <strong>Services:</strong> {{ entry.services }}
-          </p>
-          <ul class='PortfolioNav__Tags'>
-            {% for tag in entry.tags %}
-              <li class='Label'>{{ tag }}</li>
-            {% endfor %}
-          </ul>
-          {{ entry.excerpt }}
-        </div>
-        {% if entry.website -%}
-          <a class='PortfolioNav__Link' href='{{entry.website}}' target='_blank' rel='noopener'>
-            View live site
-            <span class='sr-only'> - Opens in new window</span>
-            {% svg "external" %}
-          </a>
-        {%- endif %}
-      </li>
+      {% include 'portfolio-card.liquid', entry: entry %}
     {% endfor %}
   </ul>
 

@@ -23,11 +23,13 @@ I love getting involved in the nitty-gritty of user research, workshops and UX d
 
 Be it planning out the technical architecture of a small website, or parachuting in to add new features to a legacy codebase, I've worked on all sorts of projects. I specialise in front-end development, across a wide range of tech stacks and CMSs.
 
+I work most often with [WordPress](/services/wordpress-development/), [Craft CMS](/services/craft-cms-development/) and [Shopify](/services/shopify-development/), building custom themes, block libraries and [headless front ends](/services/headless-development/).
+
 I try to focus on **_accessibility_**, **_performance_** and the **_environmental impact_** of all my work.
 
 ### Consultancy
 
-Clients often just need some help or guidance for their digital presence. Be it performance or accessibility audits and recommendations, technical architecture or a full website review, I love getting stuck into a project, investigating all the nuts and bolts and working out how we can improve any areas that need work.
+Clients often just need some help or guidance for their digital presence. Be it [technical audits](/services/technical-audits/) covering performance and accessibility, with recommendations, technical architecture or a full website review, I love getting stuck into a project, investigating all the nuts and bolts and working out how we can improve any areas that need work.
 
 ## How I work
 

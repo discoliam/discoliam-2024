@@ -62,6 +62,45 @@ module.exports = (eleventyConfig) => {
     let string = value.replace(/ *\([^)]*\) */g, '')
     return string
   })
+  // Ranks portfolio nav entries by the tags they share with the current project.
+  // Rarer tags count for more (sharing "Shopify" beats sharing "CSS"), and the
+  // list is topped up with the rest (in nav order) so there are always `limit`
+  eleventyConfig.addLiquidFilter(
+    'relatedProjects',
+    (entries = [], currentKey, limit = 3) => {
+      // "Tailwind CSS" → "tailwind", "Vue 3" → "vue", "Barba.JS" → "barba"
+      const normalise = (tags = []) =>
+        tags.map((tag) =>
+          tag
+            .toLowerCase()
+            .replace(/\s+\d+$/, '')
+            .replace(/(.+?)[\s.]?(js|css)$/, '$1')
+        )
+      const projects = entries.filter((entry) => entry.url)
+      const current = projects.find((entry) => entry.key === currentKey)
+      const currentTags = normalise(current?.tags)
+
+      const tagCounts = {}
+      projects.forEach((entry) =>
+        new Set(normalise(entry.tags)).forEach((tag) => {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1
+        })
+      )
+
+      return projects
+        .filter((entry) => entry.key !== currentKey)
+        .map((entry, index) => ({
+          entry,
+          index,
+          score: [...new Set(normalise(entry.tags))]
+            .filter((tag) => currentTags.includes(tag))
+            .reduce((total, tag) => total + 1 / tagCounts[tag], 0),
+        }))
+        .sort((a, b) => b.score - a.score || a.index - b.index)
+        .slice(0, limit)
+        .map(({ entry }) => entry)
+    }
+  )
   eleventyConfig.addPassthroughCopy({
     'src/assets/favicon': '/assets/favicon',
   })

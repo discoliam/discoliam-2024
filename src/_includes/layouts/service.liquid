@@ -1,0 +1,56 @@
+{% layout 'layouts/base.liquid' %}
+
+{% block content %}
+  <div class='Page' id='main-content'>
+    <div class='Container'>
+      <div class='ContentWrapper'>
+        <h1>{{ pageTitle }}</h1>
+        {{- content -}}
+      </div>
+
+      {% if serviceTags %}
+        {% assign projects = collections.all | eleventyNavigation: 'Portfolio' %}
+        {% capture relatedProjects %}
+          {%- for entry in projects -%}
+            {%- assign haystack = entry.tags | join: '|' | append: '|' | append: entry.services -%}
+            {%- assign matched = false -%}
+            {%- for term in serviceTags -%}
+              {%- if haystack contains term %}{% assign matched = true %}{% endif -%}
+            {%- endfor -%}
+            {%- if matched and entry.url -%}
+              {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
+            {%- endif -%}
+          {%- endfor -%}
+        {% endcapture %}
+
+        {% if relatedProjects contains 'PortfolioNav__Item' %}
+          <section class='RelatedWork' aria-labelledby='related-work-title'>
+            <h2 id='related-work-title'>{{ relatedTitle | default: 'Related projects' }}</h2>
+            <ul class='PortfolioNav PortfolioNav--related'>
+              {{ relatedProjects }}
+            </ul>
+            <a href='/portfolio/' class='Button'>View all projects</a>
+          </section>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <script type='application/ld+json'>
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "{{ pageTitle }}",
+      "serviceType": "{{ pageTitle }}",
+      "description": "{{ description | escape }}",
+      "url": "{{ site.url }}{{ page.url }}",
+      "areaServed": ["GB", "Worldwide"],
+      "provider": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "{{ site.author }}",
+        "url": "{{ site.url }}/"
+      }
+    }
+  </script>
+{% endblock %}

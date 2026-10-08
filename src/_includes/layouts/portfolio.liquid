@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  {% image hero, pageTitle, "Portfolio__Image" %}
+  {% image hero, pageTitle, "Portfolio__Image", "100vw", "eager" %}
 
   <div class='Portfolio__Intro'>
     <div class='Project__Info'>
@@ -45,11 +45,25 @@
     </div>
     <div class='Project__Excerpt'>
       <div class='ContentWrapper'>
-        <p class='Lead'>{{ eleventyNavigation.excerpt }}</p>
+        <div class='Lead'>{{ eleventyNavigation.excerpt }}</div>
         {{- content -}}
       </div>
     </div>
   </div>
+
+  {% assign portfolioEntries = collections.all | eleventyNavigation: 'Portfolio' %}
+  {% assign related = portfolioEntries | relatedProjects: eleventyNavigation.key, 3 %}
+  {% if related.size > 0 %}
+    <section class='RelatedWork' aria-labelledby='related-work-title'>
+      <h2 id='related-work-title'>Related projects</h2>
+      <ul class='PortfolioNav PortfolioNav--related'>
+        {% for entry in related %}
+          {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
+        {% endfor %}
+      </ul>
+      <a href='/portfolio/' class='Button'>View all projects</a>
+    </section>
+  {% endif %}
 </div>
 
 {%- endblock -%}

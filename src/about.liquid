@@ -67,6 +67,7 @@ eleventyNavigation:
       <h2>On the World Wide Web</h2>
 
       {% for contact in contacts %}
+        {% if contact.name == 'Email' %}{% assign protocol = 'mailto:' %}{% else %}{% assign protocol = '' %}{% endif %}
         <li>
           <a
             href='{{protocol}}{{contact.url | url}}'

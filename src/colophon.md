@@ -27,6 +27,7 @@ Hosted on [Netlify](https://www.netlify.com/).
 
 I don't normally keep older versions of my website. But, I've manged to save a few more recent versions, if you're desperate to see work I now consider rather embarrassing.
 
+- [2022](https://2022.discoliam.com/)
 - [2020](https://2020.discoliam.com/)
 - [2018](https://2018.discoliam.com/)
 - [2016](https://2016.discoliam.com/)

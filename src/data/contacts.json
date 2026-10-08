@@ -21,12 +21,5 @@
     "url": "https://github.com/discoliam/",
     "target": "_blank",
     "emoji": "🗂"
-  },
-  {
-    "name": "Mastodon",
-    "url": "https://mastodon.social/@Discoliam",
-    "target": "_blank",
-    "rel": "me",
-    "emoji": "🐘"
   }
 ]
