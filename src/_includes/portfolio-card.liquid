@@ -8,11 +8,12 @@
   <a class='PortfolioNav__Image' href='{{ entry.url }}'>
     {% capture portfolioImage %}./src/assets/images/bg-{{entrySlug}}.jpg{% endcapture %}
     {% image portfolioImage, "" %}
+
+  </a>
+  <div class='PortfolioNav__Content'>
     <{{ cardHeading }} class='PortfolioNav__Title'>
       {{ entry.title }}
     </{{ cardHeading }}>
-  </a>
-  <div class='PortfolioNav__Content'>
     <p class='PortfolioNav__Client'>
       <strong>Client:</strong> {{ entry.client -}}
       {% unless compact %}

@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Bluum
   services: 'Front-End Development'
   tags: ['Shopify', 'Liquid', 'Alpine JS', 'Swiper']
-  excerpt: <p>Bluum makes green roof garden storage and sustainable garden products. I built their Shopify store, creating a custom theme that puts their products front and centre while staying fast and accessible.</p>
+  excerpt: <p>A custom Shopify theme for Bluum, makers of green roof garden storage and sustainable garden products.</p>
   website: https://www.bluum.co.uk/
 ---
 

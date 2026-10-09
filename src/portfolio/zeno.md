@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Massive Media
   services: 'Full Stack Development'
   tags: ['WordPress', 'Gutenberg', 'ACF', 'CSS', 'JS']
-  excerpt: <p>After re-branding, Zeno needed a brand new website to help support its goal of installing solar solutions in over 1 million homes by 2040...</p>
+  excerpt: <p>A new WordPress website for Zeno following its rebrand, supporting its goal of putting solar in over 1 million homes by 2040.</p>
   website: https://www.livezeno.com/
 ---
 

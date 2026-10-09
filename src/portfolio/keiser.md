@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Keiser UK
   services: 'Front-End Development'
   tags: ['WordPress', 'PHP', 'CSS', 'JS']
-  excerpt: <p>Keiser makes fitness equipment that uses pneumatic air resistance, for gyms, performance facilities, cycling studios and rehabilitation settings. I built their UK website on WordPress, presenting a large product catalogue across several markets.</p>
+  excerpt: <p>A WordPress website for Keiser UK, presenting their air-resistance fitness equipment to gyms, studios and rehab clinics.</p>
   website: https://keiseruk.com/
 ---
 

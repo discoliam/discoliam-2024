@@ -13,7 +13,7 @@ eleventyNavigation:
   client: PNW
   services: 'Development, Accessibility & Performance'
   tags: ['Webflow', 'A11y', 'CSS', 'JS']
-  excerpt: <p>I helped PNW make Spins Webflow based website as accesable as possible. This included working with an external auditing team to run though every page, suggest design and UX & improvements, and implement those changes.</p>
+  excerpt: <p>Accessibility audit and fixes for the Spin website on Webflow, working with PNW and an external auditing team.</p>
   website: https://www.spin.app/
 ---
 

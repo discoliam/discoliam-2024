@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Bower Collective
   tags: ['Shopify', 'Vue 3', 'Storybook', 'CSS', 'JS']
   services: 'Development, Accessibility & Performance'
-  excerpt: <p>During my ongoing relationship with Bower Collective, I've worked closely with their CTO to completely redevelop their <a href="https://www.shopify.com/">Shopify</a> theme, taking them from a customised off-the-shelf theme to a brand new build, fully tailored to their business requirements, whilst improving performance and accessibility scores.</p><p>To complement this, I developed a suite of UI components, catalogued in <a href="https://storybook.js.org/">Storybook</a>, to support their fully custom user portal, greatly improving the subscription and order management workflows.</p>
+  excerpt: <p>A brand new Shopify theme and a Vue 3 component library for Bower Collective's refillable household products subscription.</p>
   website: https://www.bowercollective.com
 ---
 

@@ -1,4 +1,14 @@
 {
+  "homepageProjects": [
+    "Audi",
+    "BBC",
+    "Kia",
+    "Sky",
+    "MND Scotland",
+    "Legal and General",
+    "Koto",
+    "Lounges"
+  ],
   "projects": [
     "Audi",
     "BBC",
@@ -14,6 +24,7 @@
     "Zingermans"
   ],
   "clients": [
+    "Koto",
     "Something Familiar",
     "Oku Studio",
     "Yoke",
@@ -22,7 +33,6 @@
     "Bath Ruby",
     "Legroom",
     "Lounges",
-    "ToucanBox",
     "Beef",
     "Wallop",
     "Massive"

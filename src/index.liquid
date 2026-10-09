@@ -1,6 +1,6 @@
 ---
 title: 'Liam Richardson – Freelance Front-End Developer in Bristol, UK'
-description: 'Liam Richardson is a front-end developer and development lead in Bristol, UK, with 14 years building fast, accessible websites, design systems and installations.'
+description: 'Liam Richardson is a front-end developer and development lead in Bristol, UK, with 16 years building fast, accessible websites, design systems and installations.'
 layout: 'layouts/full-width.html'
 tags: header
 eleventyNavigation:
@@ -10,7 +10,7 @@ eleventyNavigation:
 <div class='Container'>
   <div class='Introduction'>
     <div class='Introduction__Content'>
-      <h1>Hi, I'm Liam Richardson - a Front-End Developer in Bristol, UK</h1>
+      <h1>Hi, I'm Liam - a Front-End & Web Developer based Bristol</h1>
       {% image "./src/assets/images/photo.jpg", "Photograph of Liam Richardson", "Introduction__Image", "100vw", "eager" %}
       <p>
         Thanks to a misguided choice of nickname one summer when I was 12 years old, online I go by
@@ -24,6 +24,22 @@ eleventyNavigation:
       <p>I'm the Development Lead at <a href="https://futurekings.co.uk">FutureKings</a>, a creative branding agency working with start-ups and founder-led businesses.</p>
     </div>
   </div>
+
+  <section class='RecentProjects' aria-labelledby='recent-projects-title'>
+
+    <div class="RecentProjects__Header">
+      <h2 id='recent-projects-title'>Recent projects</h2>
+      <a href='/portfolio/' class='Button'>View the Portfolio</a>
+    </div>
+
+    {% assign portfolioEntries = collections.all | eleventyNavigation: 'Portfolio' %}
+    <ul class='PortfolioNav PortfolioNav--related'>
+      {% for entry in portfolioEntries limit: 3 %}
+        {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
+      {% endfor %}
+    </ul>
+
+  </section>
 
   <div class='Services'>
     <div class='Services__Grid'>
@@ -47,26 +63,9 @@ eleventyNavigation:
     </div>
   </div>
 
-  <section class='RecentProjects' aria-labelledby='recent-projects-title'>
-
-    <div class="RecentProjects__Header">
-      <h2 id='recent-projects-title'>Recent projects</h2>
-      <a href='/portfolio/' class='Button'>View the Portfolio</a>
-    </div>
-
-    {% assign portfolioEntries = collections.all | eleventyNavigation: 'Portfolio' %}
-    <ul class='PortfolioNav PortfolioNav--related'>
-      {% for entry in portfolioEntries limit: 3 %}
-        {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
-      {% endfor %}
-    </ul>
-
-  </section>
-
-
-  <h3>A Potted history of Projects</h3>
+  <h3>Previous Clients</h3>
   <ul class='Logo__List'>
-    {% for project in portfolio.projects %}
+    {% for project in portfolio.homepageProjects %}
       <li class='Logo__Item'>
         {% assign svg_name = project | slugify %}
         {% svg svg_name %}

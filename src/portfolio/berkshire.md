@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Berkshire Consultancy
   services: 'Front-End Development'
   tags: ['WordPress', 'PHP', 'CSS', 'JS']
-  excerpt: <p>Berkshire Consultancy designs learning and development programmes covering leadership, team performance, equity, diversity and inclusion, and talent development. I built their new WordPress website, bringing their bold, illustrated brand to life online.</p>
+  excerpt: <p>A WordPress website for Berkshire Consultancy, bringing their bold, illustrated learning and development brand to life online.</p>
   website: https://berkshire.co.uk/
 ---
 

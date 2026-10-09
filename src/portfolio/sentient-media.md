@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Sentient Media
   services: 'Full Stack Development'
   tags: ['WordPress', 'Gutenberg', 'ACF', 'CSS', 'Performance']
-  excerpt: <p>I was brought in to help Sentient Media launch their new brand with a refreshed website. We started fresh with a new theme build, and some dramatic tidying up of the existing database and content. Post-launch, we saw a huge improvement in Lighthouse scores, as well as reduced file sizes on both the front-end load and backend database, giving us a faster, more environmental friendly website.</p>
+  excerpt: <p>A fresh WordPress build for Sentient Media's rebrand, making their nonprofit newsroom faster, leaner and greener.</p>
   website: https://sentientmedia.org/
 ---
 

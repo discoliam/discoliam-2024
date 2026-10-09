@@ -45,17 +45,7 @@
 }
 
 .PortfolioNav__Title {
-  text-decoration: none;
-  z-index: 10;
-  position: relative;
-  left: 20px;
-  top: 50%;
-  width: 65%;
-  color: var(--color-light);
-  transform: translateY(-50%);
-  padding: 0;
-  margin: 0;
-  font-size: 50px;
+  font-size: 36px !important;
 }
 
 .PortfolioNav__Tags {
@@ -116,9 +106,5 @@
 
   @media (--mq-lap-and-up) {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  & .PortfolioNav__Title {
-    font-size: 36px;
   }
 }

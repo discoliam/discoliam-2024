@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Durstons Garden Products
   services: 'Front-End Development'
   tags: ['WordPress', 'PHP', 'CSS', 'JS']
-  excerpt: <p>Durstons makes peat-free and peat-based composts, bark and soil conditioners for garden centres and retailers across the UK. I built their new WordPress website, giving the team a flexible, block-based CMS for showcasing their product range.</p>
+  excerpt: <p>A new WordPress website for Durstons, a UK maker of peat-free composts and garden products sold through garden centres.</p>
   website: https://durstongardenproducts.co.uk/
 ---
 

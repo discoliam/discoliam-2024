@@ -13,7 +13,7 @@ eleventyNavigation:
   client: Beeston Media
   services: 'Full Stack Development'
   tags: ['Craft CMS', 'Next.JS', 'Tailwind']
-  excerpt: <p>Beeston Media is a full-service video production company in Bristol, specialising in science, technology and higher education. I built their new website with a headless Craft CMS back end and a Next.js and Tailwind front end, giving their showreel and case studies a fast, modern home.</p>
+  excerpt: <p>A headless Craft CMS and Next.js website for Beeston Media, a Bristol video production company.</p>
   website: https://beestonmedia.com/
 ---
 

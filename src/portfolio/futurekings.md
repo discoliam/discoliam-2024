@@ -13,7 +13,7 @@ eleventyNavigation:
   client: FutureKings
   services: 'Development Lead, Front-End Development'
   tags: ['Astro', 'Headless WordPress', 'Lenis', 'Netlify']
-  excerpt: <p>FutureKings is a branding and creative agency in Bristol and Amsterdam, working with start-ups and founder-led businesses. As Development Lead, I built the agency's own website on WordPress, turning the brand into a fast, accessible site that shows off the studio's work.</p>
+  excerpt: <p>The website for FutureKings, the Bristol and Amsterdam branding agency where I'm Development Lead, built with Astro and headless WordPress.</p>
   website: https://futurekings.co.uk/
 ---
 
