@@ -4,22 +4,21 @@
 
 <div class="PreFooter">
   <div class="Container">
-    <div class="PreFooter__Content">
-      <h2>Let's talk about your project</h2>
-      <p class="Lead">
-        Whether it's a brand new build, a rescue job or a second pair of eyes on an existing site, I'm always up for a
-        chat.
-      </p>
-      <a href='/contact/' class='Button'>Get in touch</a>
-    </div>
+    <h2>Let's talk about your project</h2>
+    <p class="Lead">
+      Whether it's a brand new build, a rescue job or a second pair of eyes on an existing site, I'm always up for a
+      chat.
+    </p>
+    <a href='/contact/' class='Button'>Get in touch</a>
   </div>
 </div>
 
 
 <footer class='Footer'>
-  <div class='Container Footer__Content'>
+  <div class='Container Footer__Navs'>
+
     <div class='Footer__Social'>
-      <h2 class='Subtitle'>Get in touch</h2>
+      <h2 class='h3'>Get in touch</h2>
       <p>
         Give me a bell on any of the channels below and I'll get back to you as soon as possible.
       </p>
@@ -44,51 +43,50 @@
       </nav>
     </div>
 
+    <nav class='Footer__Nav'>
+      <h2 class='h3'>Services</h2>
+      <ul class='FooterNav'>
+        {% for entry in servicePages %}
+          <li class='FooterNav__Item'>
+            <a class='FooterNav__Link' href='{{ entry.url | url }}'>
+              {{ entry.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
 
-
-    <div class='Footer__Navs'>
-      <div class='Footer__Nav'>
-        <h2 class='Subtitle'>Services</h2>
-        <ul class='FooterNav'>
-          {% for entry in servicePages %}
-            <li class='FooterNav__Item'>
-              <a class='FooterNav__Link' href='{{ entry.url | url }}'>
-                {{ entry.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class='Footer__Nav'>
-        <h2 class='Subtitle'>Find out more</h2>
-        <ul class='FooterNav'>
-          {% for entry in navPages %}
-            <li class='FooterNav__Item'>
-              <a class='FooterNav__Link' href='{{ entry.url | url }}'>
-                {{ entry.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+    <nav class='Footer__Nav'>
+      <h2 class='h3'>Find out more</h2>
+      <ul class='FooterNav'>
+        {% for entry in navPages %}
+          <li class='FooterNav__Item'>
+            <a class='FooterNav__Link' href='{{ entry.url | url }}'>
+              {{ entry.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
 
   <div class='Container Footer__Details'>
-    <p class='Footer__Copy Subtitle'>&copy; Liam Richardson - Web Development in Bristol.</p>
-    <p class='Footer__Colophon'>
-      Built using
-      <a href='{{ 'https://www.11ty.dev/' | url }}' target='_blank' rel='noopener'
-        >11ty<span class='sr-only'> - Opens in new window</span></a
-      >. Hosted on
-      <a href='{{ 'https://www.netlify.com/' | url }}' target='_blank' rel='noopener'
-        >Netlify<span class='sr-only'> - Opens in new window</span></a
-      >. DNS by
-      <a href='{{ 'https://dnsimple.com/referrals?account_id=76379' | url }}' target='_blank' rel='noopener'
-        >DNSimple <span class='sr-only'> - Opens in new window</span></a
-      >.
-    </p>
+    <div class="Footer__DetailsContent">
+      <p class='Footer__Copy'>&copy; Liam Richardson - Web Development in Bristol.</p>
+      <p class='Footer__Colophon'>
+        Built using
+        <a href='{{ 'https://www.11ty.dev/' | url }}' target='_blank' rel='noopener'
+          >11ty<span class='sr-only'> - Opens in new window</span></a
+        >. Hosted on
+        <a href='{{ 'https://www.netlify.com/' | url }}' target='_blank' rel='noopener'
+          >Netlify<span class='sr-only'> - Opens in new window</span></a
+        >. DNS by
+        <a href='{{ 'https://dnsimple.com/referrals?account_id=76379' | url }}' target='_blank' rel='noopener'
+          >DNSimple <span class='sr-only'> - Opens in new window</span></a
+        >.
+      </p>
+    </div>
+
     <div id='wcb' class='carbonbadge wcb-d'></div>
   </div>
 </footer>

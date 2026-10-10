@@ -1,24 +1,39 @@
-/* base settings */
-
-@view-transition {
-  navigation: auto;
-}
-
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+/* Body + HTML */
+@media screen and (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
 }
 
 body {
+  background-color: var(--palette-light);
+  color: var(--palette-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-family-body);
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  position: relative;
+  font-size: var(--Typography-M);
+  font-weight: 400;
+  padding: 0;
   margin: 0;
-  font-weight: 300;
+}
+
+main {
+  background-color: var(--palette-light);
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
+}
+
+button {
+  cursor: pointer;
 }

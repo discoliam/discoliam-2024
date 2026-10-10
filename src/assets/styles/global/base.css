@@ -1,0 +1,48 @@
+/* Main Content */
+.MainContent {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: var(--palette-action);
+  transition: all var(--global-transition);
+  text-decoration: underline;
+  cursor: pointer;
+  & svg {
+    transition: fill var(--global-transition);
+  }
+  &:hover {
+    color: var(--palette-hover);
+    text-decoration-color: transparent;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+/* Media */
+img,
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+a img {
+  outline: 0;
+}
+
+mark {
+  color: var(--palette-light);
+  background-color: transparent;
+}
+
+&::selection {
+  background-color: var(--palette-action);
+  color: var(--palette-dark);
+}
+
+hr {
+  border: solid 1px var(--palette-hover);
+}

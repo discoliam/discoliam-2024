@@ -1,5 +1,5 @@
 :root {
-  /* colo(u)rs */
+  /* Brand Colo(u)rs */
   --white: #ffffff;
   --off-white: #fffbe9;
   --navy: #002726;
@@ -7,48 +7,113 @@
   --pastel-red: #ef4744;
   --macaroni-and-cheese: #fdbe27;
 
-  /* Main Colours */
-  --color-light: var(--off-white);
-  --color-dark: var(--navy);
-  --color-main: var(--teal);
-  --color-alt: var(--pastel-red);
-  --color-secondary: var(--macaroni-and-cheese);
+  /* Palettes */
+  --palette-action: var(--pastel-red);
+  --palette-hover: var(--macaroni-and-cheese);
 
-  /* Fonts */
+  --palette-light: var(--off-white);
+  --palette-mid: var(--teal);
+  --palette-dark: var(--navy);
+
+  --palette-success: var(--teal);
+  --palette-error: var(--pastel-red);
+  --palette-warning: var(--macaroni-and-cheese);
+
+  /* Sizing */
+  --Spacings-x1: calc((4 / 16) * 1rem);
+  --Spacings-x2: calc((8 / 16) * 1rem);
+  --Spacings-x3: calc((12 / 16) * 1rem);
+  --Spacings-x4: calc((16 / 16) * 1rem);
+  --Spacings-x5: calc((20 / 16) * 1rem);
+  --Spacings-x6: calc((24 / 16) * 1rem);
+  --Spacings-x7: calc((28 / 16) * 1rem);
+  --Spacings-x8: calc((32 / 16) * 1rem);
+  --Spacings-x9: calc((36 / 16) * 1rem);
+  --Spacings-x10: calc((40 / 16) * 1rem);
+  --Spacings-x15: calc((60 / 16) * 1rem);
+  --Spacings-x16: calc((64 / 16) * 1rem);
+  --Spacings-x20: calc((80 / 16) * 1rem);
+  --Spacings-x24: calc((96 / 16) * 1rem);
+  --Spacings-x30: calc((120 / 16) * 1rem);
+
+  /* Page */
+  --gap: 16px;
+  --page-padding: 16px;
+  --calc-page-padding: 16px;
+
+  --max-width: 1216px;
+  --thin-width: 800px;
+
+  --half-gap: calc(var(--gap) / 2);
+  --double-gap: calc(var(--gap) * 2);
+  --tripple-gap: calc(var(--gap) * 3);
+  --col-width: calc((100% - (11 * var(--gap))) / 12);
+
+  --header-spacing: calc((80 / 16) * 1rem);
+  --header-spacing--scrolled: calc((60 / 16) * 1rem);
+
+  --subnav-column-height: calc((184 / 16) * 1rem);
+
+  /* Borders */
+  --border-width: 1px;
+  --border-color: var(--teal);
+  --border: solid var(--border-width) var(--border-color);
+
+  /* Border Radius */
+  --border-radius: 12px;
+
+  /* A11y */
+  --a11y-outline: dashed 1px var(--palette-light);
+  --a11y-outline-light: dashed 1px var(--palette-mid);
+
+  /* Type */
   --font-family-body: 'Merriweather', serif;
   --font-family-heading: 'Lato', sans-serif;
 
-  /* Spacing */
-  --gap: 24px;
-  --border-radius: 4px;
-
-  --spacing: 40px;
-
-  /* font sizes */
+  /* Font Sizes */
   /* --px-to-rem: calc((var(--pixels) / 16) * 1rem); */
-  --font-size--h1: calc((54 / 16) * 1rem); /* 56px */
-  --font-size--h2: calc((40 / 16) * 1rem); /* 32px */
-  --font-size--h3: calc((32 / 16) * 1rem); /* 26px */
-  --font-size--h4: calc((26 / 16) * 1rem); /* 23px */
-  --font-size--h5: calc((23 / 16) * 1rem); /* 22px */
-  --font-size--h6: calc((16 / 16) * 1rem); /* 16px */
-  --font-size--base: calc((16 / 16) * 1rem); /* 16px */
-  --font-size--lead: calc((20 / 16) * 1rem); /* 16px */
+
+  --Typography-XXXXL: calc((40 / 16) * 1rem);
+  --Typography-XXXL: calc((38 / 16) * 1rem);
+  --Typography-XXL: calc((34 / 16) * 1rem);
+  --Typography-XL: calc((28 / 16) * 1rem);
+  --Typography-L: calc((24 / 16) * 1rem);
+  --Typography-M: calc((18 / 16) * 1rem);
+  --Typography-S: calc((16 / 16) * 1rem);
+  --Typography-XS: calc((14 / 16) * 1rem);
+  --Typography-XXS: calc((12 / 16) * 1rem);
+  --Typography-XXXS: calc((10 / 16) * 1rem);
+
+  /* Line height */
+  --line-height--heading: 1;
+  --line-height--paragraph: 1.1;
 
   /* Transitions */
-  --global-transition: 150ms ease;
-}
+  --global-timing: cubic-bezier(0.2, 1, 0.3, 1);
+  --global-duration: 0.5s;
+  --global-transition: var(--global-duration) var(--global-timing);
 
-@media (--mq-tablet-and-up) {
-  :root {
-    --font-size--h1: calc((64 / 16) * 1rem); /* 56px */
-    --font-size--h2: calc((56 / 16) * 1rem); /* 40px */
-    --font-size--h3: calc((40 / 16) * 1rem); /* 32px */
-    --font-size--h4: calc((32 / 16) * 1rem); /* 26px */
-    --font-size--h5: calc((26 / 16) * 1rem); /* 21px */
-    --font-size--h6: calc((21 / 16) * 1rem); /* 18px */
-    --font-size--base: calc((18 / 16) * 1rem); /* 18px */
-    --font-size--lead: calc((24 / 16) * 1rem); /* 16px */
-    --spacing: 60px;
+  /* Tablet */
+  @media (--mq-tablet-and-up) {
+    --page-padding: 32px;
+    --calc-page-padding: 32px;
+  }
+
+  /* Netbook */
+  @media (--mq-netbook-and-up) {
+    --Typography-XXXXL: calc((52 / 16) * 1rem);
+    --Typography-XXXL: calc((44 / 16) * 1rem);
+    --Typography-XXL: calc((34 / 16) * 1rem);
+    --Typography-XL: calc((28 / 16) * 1rem);
+    --Typography-L: calc((24 / 16) * 1rem);
+    --Typography-M: calc((21 / 16) * 1rem);
+    --Typography-S: calc((18 / 16) * 1rem);
+    --Typography-XS: calc((16 / 16) * 1rem);
+    --Typography-XXS: calc((14 / 16) * 1rem);
+    --Typography-XXXS: calc((12 / 16) * 1rem);
+
+    --gap: 32px;
+    --page-padding: 112px;
+    --calc-page-padding: calc((100vw - var(--max-width)) / 2);
   }
 }
