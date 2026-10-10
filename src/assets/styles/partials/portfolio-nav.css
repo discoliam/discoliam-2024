@@ -1,0 +1,14 @@
+.PortfolioNav {
+  display: flex;
+  gap: var(--Spacings-x8);
+  align-items: flex-start;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.PortfolioNav__Item {
+  flex: 0 0 25%;
+}

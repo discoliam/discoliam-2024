@@ -1,0 +1,31 @@
+.LogoList__Wrapper {
+  margin-top: var(--Spacings-x30);
+  h3 {
+    padding-bottom: var(--Spacings-x8);
+    text-align: center;
+  }
+}
+
+.Logo__List {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Spacings-x16);
+}
+
+.Logo__Item {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & svg {
+    width: auto;
+    height: 100%;
+    max-width: 180px;
+    max-height: 50px;
+  }
+}

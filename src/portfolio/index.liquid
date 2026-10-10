@@ -26,25 +26,31 @@ eleventyNavigation:
     {% endfor %}
   </ul>
 
-  <h3>A Potted history of Projects</h3>
-  <ul class='Logo__List'>
-    {% for project in portfolio.projects %}
-      <li class='Logo__Item'>
-        {% assign svg_name = project | slugify %}
-        {% svg svg_name %}
-        <span class='sr-only'>{{ project }}</span>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="LogoList__Wrapper">
+    <h3>A Potted history of Projects</h3>
+    <ul class='Logo__List'>
+      {% for project in portfolio.projects %}
+        <li class='Logo__Item'>
+          {% assign svg_name = project | slugify %}
+          {% svg svg_name %}
+          <span class='sr-only'>{{ project }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-  <h3>A Selection of Clients</h3>
-  <ul class='Logo__List'>
-    {% for client in portfolio.clients %}
-      <li class='Logo__Item'>
-        {% assign svg_name = client | slugify %}
-        {% svg svg_name %}
-        <span class='sr-only'>{{ client }}</span>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="LogoList__Wrapper">
+    <h3>A Selection of Clients</h3>
+    <ul class='Logo__List'>
+      {% for client in portfolio.clients %}
+        <li class='Logo__Item'>
+          {% assign svg_name = client | slugify %}
+          {% svg svg_name %}
+          <span class='sr-only'>{{ client }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
 </div>

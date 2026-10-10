@@ -9,6 +9,8 @@
 @import 'utilities/container.css';
 @import 'utilities/a11y.css';
 
+@import 'partials/logo-list.css';
+@import 'partials/portfolio-nav.css';
 @import 'partials/footer.css';
 
 @import 'templates/centered.css';
