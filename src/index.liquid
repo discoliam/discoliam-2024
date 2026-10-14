@@ -35,7 +35,7 @@ eleventyNavigation:
     {% assign portfolioEntries = collections.all | eleventyNavigation: 'Portfolio' %}
     <ul class='PortfolioNav PortfolioNav--related'>
       {% for entry in portfolioEntries limit: 3 %}
-        {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
+        {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3' %}
       {% endfor %}
     </ul>
 
@@ -63,15 +63,19 @@ eleventyNavigation:
     </div>
   </div>
 
-  <h3>Previous Clients</h3>
-  <ul class='Logo__List'>
-    {% for project in portfolio.homepageProjects %}
-      <li class='Logo__Item'>
-        {% assign svg_name = project | slugify %}
-        {% svg svg_name %}
-        <span class='sr-only'>{{ project }}</span>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="LogoList__Wrapper">
+    <h3>Previous Clients</h3>
+    <ul class='Logo__List'>
+      {% for project in portfolio.homepageProjects %}
+        <li class='Logo__Item'>
+          {% assign svg_name = project | slugify %}
+          {% svg svg_name %}
+          <span class='sr-only'>{{ project }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
 
 </div>

@@ -1,14 +1,65 @@
 .PortfolioNav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--Spacings-x8);
-  align-items: flex-start;
-  justify-content: center;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  flex-wrap: wrap;
 }
 
 .PortfolioNav__Item {
   flex: 0 0 25%;
+}
+
+.PortfolioNav__Image {
+  border-radius: var(--border-radius);
+  display: block;
+  overflow: hidden;
+  margin-bottom: var(--Spacings-x4);
+  & img {
+    transition: all var(--global-transition);
+    display: block;
+  }
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.PortfolioNav__Client {
+  font-family: var(--font-family-heading);
+  font-size: var(--Typography-XS);
+  font-weight: 700;
+  color: var(--palette-mid);
+  margin-top: 0;
+  & strong {
+    font-weight: 900;
+    color: var(--palette-dark);
+  }
+}
+
+.PortfolioNav__Tags {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--Spacings-x2);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.PortfolioNav__Excerpt {
+  font-size: var(--Typography-S);
+}
+
+@media (--mq-mobile-and-up) {
+  .PortfolioNav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (--mq-netbook-and-up) {
+  .PortfolioNav {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

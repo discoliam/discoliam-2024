@@ -197,3 +197,15 @@ nav a {
 ::marker {
   color: var(--palette-hover);
 }
+
+.Label {
+  background-color: var(--palette-hover);
+  padding: 6px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: var(--Typography-XXXS);
+  text-transform: uppercase;
+  font-family: var(--font-family-heading);
+  letter-spacing: 0.05em;
+  font-weight: 900;
+}

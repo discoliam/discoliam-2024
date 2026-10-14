@@ -1,7 +1,7 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Keiser | Discoliam
-pageTitle: Keiser
+title: Keiser UK + Keiser Aus | Discoliam
+pageTitle: Keiser UK + Keiser Aus
 description: 'Case study: WordPress development for Keiser UK, presenting pneumatic air-resistance fitness equipment to gyms, studios and rehab settings.'
 year: # 2025
 website: https://keiseruk.com/
@@ -10,10 +10,10 @@ eleventyNavigation:
   key: Keiser
   parent: Portfolio
   order: 4
-  client: Keiser UK
+  client: FutureKings
   services: 'Front-End Development'
   tags: ['WordPress', 'PHP', 'CSS', 'JS']
-  excerpt: <p>A WordPress website for Keiser UK, presenting their air-resistance fitness equipment to gyms, studios and rehab clinics.</p>
+  excerpt: <p>A WordPress website for Keiser UK and Keiser Australia, presenting their air-resistance fitness equipment to gyms, studios and rehab clinics.</p>
   website: https://keiseruk.com/
 ---
 

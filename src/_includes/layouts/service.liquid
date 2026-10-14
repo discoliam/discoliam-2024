@@ -18,7 +18,7 @@
               {%- if haystack contains term %}{% assign matched = true %}{% endif -%}
             {%- endfor -%}
             {%- if matched and entry.url -%}
-              {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
+              {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3' %}
             {%- endif -%}
           {%- endfor -%}
         {% endcapture %}
@@ -29,7 +29,6 @@
             <ul class='PortfolioNav PortfolioNav--related'>
               {{ relatedProjects }}
             </ul>
-            <a href='/portfolio/' class='Button'>View all projects</a>
           </section>
         {% endif %}
       {% endif %}

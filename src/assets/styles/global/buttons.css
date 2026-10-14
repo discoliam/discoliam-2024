@@ -3,7 +3,7 @@ a.Button {
   font-family: var(--font-family-heading);
   border: solid 2px var(--palette-action) !important;
   background-color: var(--palette-action) !important;
-  color: var(--palette-dark) !important;
+  color: var(--palette-light) !important;
   padding: 0 var(--Spacings-x6);
   appearance: none;
   cursor: pointer;

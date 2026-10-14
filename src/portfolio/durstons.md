@@ -10,7 +10,7 @@ eleventyNavigation:
   key: Durstons
   parent: Portfolio
   order: 3
-  client: Durstons Garden Products
+  client: FutureKings
   services: 'Front-End Development'
   tags: ['WordPress', 'PHP', 'CSS', 'JS']
   excerpt: <p>A new WordPress website for Durstons, a UK maker of peat-free composts and garden products sold through garden centres.</p>

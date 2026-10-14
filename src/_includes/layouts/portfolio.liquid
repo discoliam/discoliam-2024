@@ -58,7 +58,7 @@
       <h2 id='related-work-title'>Related projects</h2>
       <ul class='PortfolioNav PortfolioNav--related'>
         {% for entry in related %}
-          {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3', compact: true %}
+          {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3'%}
         {% endfor %}
       </ul>
       <a href='/portfolio/' class='Button'>View all projects</a>

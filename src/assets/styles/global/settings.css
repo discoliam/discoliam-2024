@@ -36,6 +36,8 @@
   --Spacings-x24: calc((96 / 16) * 1rem);
   --Spacings-x30: calc((120 / 16) * 1rem);
 
+  --flow: var(--Spacings-x30);
+
   /* Page */
   --gap: 16px;
   --page-padding: 16px;

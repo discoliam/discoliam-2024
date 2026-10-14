@@ -1,6 +1,6 @@
 {% comment %}
   Portfolio card. Expects `entry` (an eleventyNavigation entry under Portfolio).
-  Optional: `headingLevel` (defaults to h2), `compact` (hides services and excerpt).
+  Optional: `headingLevel` (defaults to h2)
 {% endcomment %}
 {% assign entrySlug = entry.title | slugify %}
 {% assign cardHeading = headingLevel | default: 'h2' %}
@@ -16,19 +16,18 @@
     </{{ cardHeading }}>
     <p class='PortfolioNav__Client'>
       <strong>Client:</strong> {{ entry.client -}}
-      {% unless compact %}
-        <br>
-        {% comment %} <strong>Services:</strong> {{ entry.services }} {% endcomment %}
-      {% endunless %}
     </p>
     <ul class='PortfolioNav__Tags'>
       {% for tag in entry.tags %}
         <li class='Label'>{{ tag }}</li>
       {% endfor %}
     </ul>
-    {% unless compact %}{{ entry.excerpt }}{% endunless %}
+    <div class="PortfolioNav__Excerpt">
+      {{ entry.excerpt }}
+    </div>
+
   </div>
-  <a class='Button Button--secondary' href='{{ entry.url }}'>
+  <a class='Button Button--hollow' href='{{ entry.url }}'>
     Read the case study<span class='sr-only'>: {{ entry.title }}</span>
   </a>
 </li>

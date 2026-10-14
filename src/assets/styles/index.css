@@ -11,6 +11,8 @@
 
 @import 'partials/logo-list.css';
 @import 'partials/portfolio-nav.css';
+@import 'partials/recent-projects.css';
+@import 'partials/services.css';
 @import 'partials/footer.css';
 
 @import 'templates/centered.css';

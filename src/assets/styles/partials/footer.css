@@ -1,6 +1,7 @@
 .PreFooter {
   background-color: var(--palette-hover);
   padding: var(--Spacings-x8) 0;
+  margin-top: var(--flow);
 }
 
 footer {
