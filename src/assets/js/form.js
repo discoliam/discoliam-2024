@@ -1,44 +1,46 @@
 // Ajax Form
+// Submits the Netlify form in the background, then shows a success or error
+// message. Focus moves to the message so screen reader users hear the result.
 
-// Vars
-const form = document.getElementById('ContactForm')
-const contactMessage = document.querySelector('.Contact__Message')
-const contactMessageSuccess = document.querySelector(
-  '.Contact__MessageText--success'
-)
-const contactMessageError = document.querySelector(
-  '.Contact__MessageText--error'
-)
+export default function form() {
+  const contactForm = document.getElementById('ContactForm')
+  if (!contactForm) return
 
-export default function () {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    const myForm = event.target
-    const formData = new FormData(myForm)
+  const contactMessage = document.querySelector('.Contact__Message')
+  const successMessage = document.querySelector('.Contact__MessageText--success')
+  const errorMessage = document.querySelector('.Contact__MessageText--error')
+  const submitButton = contactForm.querySelector('[type="submit"]')
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(showFormMessage(contactMessageSuccess))
-      .catch((error) => showFormMessage(contactMessageError, error))
-  }
-
-  if (document.getElementById('ContactForm')) {
-    form.addEventListener('submit', handleSubmit)
-  }
-
-  const showFormMessage = (message, error) => {
-    message.style.display = 'block'
-    showMessageHideForm()
-    if (error) {
-      console.error(error)
-    }
-  }
-
-  const showMessageHideForm = () => {
+  const showMessage = (message) => {
+    ;[successMessage, errorMessage].forEach((el) => (el.style.display = 'none'))
     contactMessage.classList.add('Contact__Message--active')
-    form.style.display = 'none'
+    message.style.display = 'block'
+    message.setAttribute('tabindex', '-1')
+    message.focus()
   }
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    submitButton.disabled = true
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(contactForm)).toString(),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`)
+      }
+
+      contactForm.style.display = 'none'
+      showMessage(successMessage)
+    } catch (error) {
+      console.error(error)
+      // Keep the form so their message isn't lost and they can try again
+      submitButton.disabled = false
+      showMessage(errorMessage)
+    }
+  })
 }

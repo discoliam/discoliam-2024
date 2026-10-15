@@ -44,7 +44,7 @@
   --calc-page-padding: 16px;
 
   --max-width: 1216px;
-  --thin-width: 800px;
+  --thin-width: 900px;
 
   --half-gap: calc(var(--gap) / 2);
   --double-gap: calc(var(--gap) * 2);

@@ -2,7 +2,7 @@
 title: 'Headless CMS and Jamstack Developer in Bristol, UK | Discoliam'
 description: 'Freelance headless CMS developer in Bristol, UK. Astro, Next.js and Eleventy front ends for WordPress, Craft CMS and Sanity, hosted on Netlify or Vercel.'
 layout: 'layouts/service.liquid'
-pageTitle: Headless + Jamstack Development Development
+pageTitle: Headless + Jamstack Development
 serviceTags: ['Headless', 'Next.JS', 'Astro', 'Netlify']
 relatedTitle: Headless and Jamstack projects
 eleventyNavigation:

@@ -1,0 +1,205 @@
+/*
+  Header
+  Mobile: logo left, menu toggle right. The nav drops down as a full-width panel.
+  Tablet and up: logo left, nav listed horizontally on the right, no toggle.
+  menu.js adds [data-menu] to .Header, so without JS the nav simply stays visible.
+*/
+
+.Header {
+  position: relative;
+  z-index: 10;
+  margin-bottom: var(--Spacings-x16);
+  view-transition-name: header;
+}
+
+.Header__Inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  padding: var(--gap) 0;
+  /* Let the mobile panel position against .Header, not the container */
+  position: static;
+  container-type: normal;
+}
+
+/* Logo */
+.Header__Logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 100px;
+  color: var(--palette-action);
+  text-decoration: none;
+
+  & svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1908/869;
+  }
+
+  @media (--mq-tablet-and-up) {
+    width: 160px;
+  }
+}
+
+/* Menu toggle (mobile only) */
+.Header__Toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--Spacings-x10);
+  height: var(--Spacings-x10);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--palette-dark);
+  cursor: pointer;
+
+  &[hidden] {
+    display: none;
+  }
+
+  @media (--mq-tablet-and-up) {
+    display: none;
+  }
+}
+
+.Header__ToggleIcon {
+  position: relative;
+  display: block;
+  width: var(--Spacings-x8);
+  height: var(--Spacings-x5);
+
+  & span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: var(--border-radius);
+    background-color: currentColor;
+    transition: transform var(--global-transition), opacity var(--global-transition), top var(--global-transition);
+  }
+
+  & span:nth-child(1) {
+    top: 0;
+  }
+  & span:nth-child(2) {
+    top: calc(50% - 1.5px);
+  }
+  & span:nth-child(3) {
+    top: calc(100% - 3px);
+  }
+}
+
+/* Toggle becomes an X when open */
+.Header[data-menu='open'] .Header__ToggleIcon span {
+  &:nth-child(1) {
+    top: calc(50% - 1.5px);
+    transform: rotate(45deg);
+  }
+  &:nth-child(2) {
+    opacity: 0;
+  }
+  &:nth-child(3) {
+    top: calc(50% - 1.5px);
+    transform: rotate(-45deg);
+  }
+}
+
+/* Nav */
+.MainNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.MainNav__Item {
+  margin: 0;
+  padding: 0;
+}
+
+.MainNav__Link {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Mobile: full-width panel below the header row */
+@media (--mq-below-tablet) {
+  .Header__Nav {
+    flex-basis: 100%;
+  }
+
+  .Header[data-menu] .Header__Nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: var(--Spacings-x6) var(--page-padding) var(--Spacings-x10);
+    background-color: var(--palette-dark);
+  }
+
+  .Header[data-menu='closed'] .Header__Nav {
+    display: none;
+  }
+
+  .MainNav__Item + .MainNav__Item {
+    border-top: solid var(--border-width) var(--palette-mid);
+  }
+
+  .MainNav__Link {
+    padding: var(--Spacings-x3) 0;
+    font-size: var(--Typography-L);
+    color: var(--palette-dark);
+
+    &:hover,
+    &[aria-current='page'] {
+      color: var(--palette-action);
+    }
+  }
+
+  /* Once JS has collapsed the nav into the dark panel */
+  .Header[data-menu] .MainNav__Link {
+    color: var(--palette-light);
+
+    &:hover,
+    &[aria-current='page'] {
+      color: var(--palette-hover);
+    }
+  }
+}
+
+/* Tablet and up: horizontal list, pushed to the right */
+@media (--mq-tablet-and-up) {
+  .Header__Nav {
+    margin-left: auto;
+  }
+
+  .MainNav {
+    display: flex;
+    align-items: center;
+    gap: var(--Spacings-x8);
+  }
+
+  .MainNav__Link {
+    padding: var(--Spacings-x2) 0;
+    font-size: var(--Typography-XS);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--palette-dark);
+    border-bottom: solid 2px transparent;
+
+    &:hover {
+      color: var(--palette-action);
+    }
+
+    &[aria-current='page'] {
+      color: var(--palette-action);
+      border-bottom-color: currentColor;
+    }
+  }
+}

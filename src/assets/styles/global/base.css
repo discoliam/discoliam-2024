@@ -16,8 +16,11 @@ a {
     color: var(--palette-hover);
     text-decoration-color: transparent;
   }
-  &:focus {
-    outline: 0;
+  /* Keyboard focus ring, in the link's own colour so it works on any background */
+  &:focus-visible {
+    outline: solid 2px currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
@@ -38,7 +41,7 @@ mark {
   background-color: transparent;
 }
 
-&::selection {
+::selection {
   background-color: var(--palette-action);
   color: var(--palette-dark);
 }

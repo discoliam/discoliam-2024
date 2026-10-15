@@ -1,0 +1,76 @@
+/* Label */
+label {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-size: var(--Typography-M);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--Spacings-x2) 0;
+  color: var(--palette-mid);
+}
+
+[title='required'] {
+  text-decoration: none;
+  color: var(--palette-action);
+}
+
+/* Input Types */
+input[type='color'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--Spacings-x3);
+  background-color: var(--white);
+  color: var(--palette-dark);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family-body);
+  font-size: var(--Typography-S);
+  transition: border-color var(--global-transition), box-shadow var(--global-transition);
+
+  &::placeholder {
+    color: var(--palette-dark);
+    opacity: 0.6;
+  }
+
+  /* Focus Styles - uses outline for A11y */
+  &:focus-visible {
+    outline: solid 2px var(--palette-action);
+    outline-offset: 2px;
+    border-color: var(--palette-action);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  min-height: calc((200 / 16) * 1rem);
+  resize: vertical;
+}
+
+.InputWrap {
+  margin-bottom: var(--Spacings-x8);
+}
+
+/* Accent Colour for form elements */
+input[type='checkbox'],
+input[type='radio'],
+input[type='range'],
+progress {
+  accent-color: var(--palette-mid);
+}

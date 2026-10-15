@@ -12,7 +12,7 @@ eleventyNavigation:
   order: 4
   client: FutureKings
   services: 'Front-End Development'
-  tags: ['WordPress', 'PHP', 'CSS', 'JS']
+  tags: ['WordPress', 'PHP', 'CSS', 'JS', 'Shopify']
   excerpt: <p>A WordPress website for Keiser UK and Keiser Australia, presenting their air-resistance fitness equipment to gyms, studios and rehab clinics.</p>
   website: https://keiseruk.com/
 ---

@@ -4,6 +4,7 @@
 @import 'global/base.css';
 @import 'global/body.css';
 @import 'global/type.css';
+@import 'global/forms.css';
 @import 'global/buttons.css';
 
 @import 'utilities/container.css';
@@ -13,9 +14,13 @@
 @import 'partials/portfolio-nav.css';
 @import 'partials/recent-projects.css';
 @import 'partials/services.css';
+@import 'partials/header.css';
+
 @import 'partials/footer.css';
 
 @import 'templates/centered.css';
+@import 'templates/portfolio-single.css';
+@import 'templates/contact.css';
 
 /* Vendor */
 @import '../../../node_modules/dracula-prism/dist/css/dracula-prism.css';

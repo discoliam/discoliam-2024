@@ -1,0 +1,108 @@
+.Contact__Grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+
+  @media (--mq-tablet-and-up) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.Contact__Form {
+  @media (--mq-tablet-and-up) {
+    grid-column: 1 / span 6;
+  }
+}
+
+.Contact__Info {
+  @media (--mq-tablet-and-up) {
+    grid-column: 8 / span 5;
+  }
+}
+
+/* Success / error message, shown by form.js after submitting */
+.Contact__Message {
+  display: none;
+
+  &.Contact__Message--active {
+    display: block;
+  }
+}
+
+.Contact__MessageText {
+  display: none;
+  padding: var(--gap);
+  color: var(--palette-light);
+  border-radius: var(--border-radius);
+}
+
+.Contact__MessageText--success {
+  background-color: var(--palette-success);
+}
+
+.Contact__MessageText--error {
+  background-color: var(--palette-error);
+}
+
+/* Contact details */
+.Contact__List {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  & li {
+    margin-bottom: var(--Spacings-x8);
+  }
+}
+
+.Contact__Link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--Spacings-x4);
+  text-decoration: none;
+}
+
+.Contact__Icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 var(--Spacings-x10);
+  width: var(--Spacings-x10);
+  height: var(--Spacings-x10);
+  border-radius: 50%;
+  background-color: var(--palette-mid);
+  color: var(--palette-light);
+  transition: background-color var(--global-transition);
+
+  & svg {
+    display: block;
+    width: var(--Spacings-x5);
+    height: var(--Spacings-x5);
+  }
+}
+
+.Contact__Name {
+  display: block;
+  margin: 0 0 var(--Spacings-x1) 0;
+  color: var(--palette-mid);
+}
+
+.Contact__Url {
+  color: var(--palette-dark);
+  font-style: italic;
+  font-size: var(--Typography-XS);
+  font-weight: 300;
+  word-break: break-word;
+}
+
+.Contact__Link:hover {
+  & .Contact__Icon {
+    background-color: var(--palette-action);
+  }
+
+  & .Contact__Url {
+    text-decoration: underline;
+    text-decoration-color: var(--palette-action);
+  }
+}

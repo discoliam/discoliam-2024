@@ -1,11 +1,23 @@
 {% assign navPages = collections.header | eleventyNavigation %}
 
 <header class='Header'>
-  <div class='Container'>
-    <a class='Header__Site-Title' href='/' aria-label='{{ site.name }}'>
+  <div class='Container Header__Inner'>
+    <a class='Header__Logo' href='/'>
       {% svg "logo" %}
+      <span class='sr-only'>{{ site.name }} – home</span>
     </a>
-    <nav class='Header__Nav' data-menu='closed'>
+
+    {% comment %} Hidden until menu.js runs, so the nav is always reachable without JS {% endcomment %}
+    <button class='Header__Toggle' type='button' aria-expanded='false' aria-controls='site-nav' hidden>
+      <span class='Header__ToggleIcon' aria-hidden='true'>
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span class='sr-only'>Menu</span>
+    </button>
+
+    <nav class='Header__Nav' id='site-nav' aria-label='Main'>
       <ul class='MainNav'>
         {% for entry in navPages %}
           <li class='MainNav__Item'>
@@ -13,7 +25,7 @@
               class='MainNav__Link'
               href='{{ entry.url | url }}'
               {% if entry.url == page.url %}
-                aria-current='true'
+                aria-current='page'
               {% endif %}
             >
               {{- entry.title -}}
@@ -22,11 +34,5 @@
         {% endfor %}
       </ul>
     </nav>
-
-    <button class='Header__NavToggle' aria-expanded='false' aria-label='Open site navigation' aria-haspopup='true'>
-      <b aria-hidden></b>
-      <b aria-hidden></b>
-      <b aria-hidden></b>
-    </button>
   </div>
 </header>

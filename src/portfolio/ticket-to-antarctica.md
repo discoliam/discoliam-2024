@@ -14,7 +14,7 @@ eleventyNavigation:
   services: 'Full Stack Development'
   tags: ['WordPress', 'ACF', 'Leaflet', 'Mailchimp', 'PHP', 'JS']
   excerpt: <p>A British Antarctic Survey campaign that sends people's names to Antarctica, with a live plane tracker and travel journal, built over two seasons.</p>
-  website: https://tickettoantarctica.com//
+  website: https://tickettoantarctica.com/
 ---
 
 Ticket to Antarctica is a public engagement campaign from the [British Antarctic Survey](https://www.bas.ac.uk/), the UK's national polar research centre. Each season, people sign up to send their name to Antarctica on board one of BAS's Twin Otter planes, then follow the journey as it flies from Canada to Antarctica and on to research stations like Rothera and Halley VI. Working with A Couple of Birds, I built and looked after the site across two seasons, in 2024 and 2025.

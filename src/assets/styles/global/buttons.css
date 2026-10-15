@@ -35,8 +35,10 @@ a.Button {
     outline-width: 6px;
   }
 
-  &:focus {
-    outline: 0;
+  /* Keyboard focus ring, offset so it's distinct from the hover outline */
+  &:focus-visible {
+    outline: solid 3px var(--palette-dark);
+    outline-offset: 3px;
   }
 }
 
@@ -53,9 +55,9 @@ a.Button {
 /* Red Button */
 .Button.Button--red,
 .wp-block-button__link.has-red-background-color {
-  background-color: var(--red) !important;
-  border-color: var(--red) !important;
-  outline-color: var(--red) !important;
+  background-color: var(--pastel-red) !important;
+  border-color: var(--pastel-red) !important;
+  outline-color: var(--pastel-red) !important;
   color: var(--palette-light) !important;
 }
 

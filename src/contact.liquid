@@ -30,17 +30,17 @@ eleventyNavigation:
 
         <div class="InputWrap">
           <label for="name">Name: <abbr title="required">*</abbr></label>
-          <input type="text" name="name" placeholder="Firstname Surname" required />
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Firstname Surname" required />
         </div>
 
         <div class="InputWrap">
           <label for="email">Email: <abbr title="required">*</abbr></label>
-          <input type="email" name="email" required placeholder="hello@example.com" />
+          <input type="email" id="email" name="email" autocomplete="email" required placeholder="hello@example.com" />
         </div>
 
         <div class="InputWrap">
           <label for="message">Message: <abbr title="required">*</abbr></label>
-          <textarea name="message" placeholder="Let me know some brief details about your project e.g timelines, budgets, existing tech stack, etc." required></textarea>
+          <textarea id="message" name="message" placeholder="Let me know some brief details about your project e.g timelines, budgets, existing tech stack, etc." required></textarea>
         </div>
 
         <div data-netlify-recaptcha="true" class="InputWrap">
@@ -56,7 +56,7 @@ eleventyNavigation:
           Thanks for getting in touch! I'll get back to you as soon as I can.
         </p>
         <p class="Contact__MessageText Contact__MessageText--error">
-          Oh no! Something went wrong. Please refresh and try again.
+          Oh no! Something went wrong sending your message. Please try again, or email me directly at hello@discoliam.com.
         </p>
       </div>
     </div>
