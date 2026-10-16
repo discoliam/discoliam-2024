@@ -1,12 +1,11 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Woven | Discoliam
+title: WordPress website for Woven | Discoliam
 pageTitle: Woven
-description: Case Study for Woven
+description: 'Case study: a WordPress site with smooth scrolling and page transitions for Woven, a video production company, built with Oku Studio.'
 year: 2023
 website: https://wovenfilms.co.uk/
 hero: './src/assets/images/bg-woven.jpg'
-permalink: false
 eleventyNavigation:
   key: Woven
   parent: Portfolio
@@ -14,6 +13,12 @@ eleventyNavigation:
   client: Oku Studio
   services: 'Full Stack Development'
   tags: ['WordPress', 'Gutenberg', 'Lottie', 'Barba.JS', 'CSS', 'JS']
-  excerpt: <p>I helped Oku Studio develop Wovens' new branding and logo into a complementary website and user experience. The addition of smooth scrolling from <a href="https://locomotivemtl.github.io/locomotive-scroll/">Locomotiv Scroll</a> and page transitions via <a href="https://barba.js.org/">Barba.js</a> makes this WordPress based site feel closer to an SPA and highlights Woven's creative energy and passion for video production.</p>
+  excerpt: <p>A WordPress website with smooth scrolling and page transitions for Woven, a video production company, built with Oku Studio.</p>
   website: https://wovenfilms.co.uk/
 ---
+
+Woven is a video production company with a lot of creative energy, and their new brand needed a website to match. Working with Oku Studio, I turned Woven's new branding and logo into a website and user experience that feel just as creative.
+
+Smooth scrolling from [Locomotive Scroll](https://github.com/locomotivemtl/locomotive-scroll) and page transitions with [Barba.js](https://barba.js.org/) make the site feel closer to a single-page app than a traditional WordPress site. [Lottie](https://airbnb.io/lottie/) animations bring the brand's motion to life in a lightweight and interactive way that video alone couldn't.
+
+Behind the scenes, everything is built from Gutenberg blocks, so the Woven team can put together new project pages and keep their portfolio up to date without needing a developer. Animations respect reduced motion preferences, and content stays accessible however people choose to browse.

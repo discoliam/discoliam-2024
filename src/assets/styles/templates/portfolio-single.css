@@ -1,0 +1,73 @@
+.PortfolioSingle__Header {
+  text-align: center;
+  & h1 {
+    margin-bottom: var(--Spacings-x4);
+    font-size: var(--Typography-XXXXL);
+  }
+}
+
+.PortfolioSingle__Image {
+  display: block;
+}
+
+.PortfolioSingle__Intro {
+  margin-top: var(--Spacings-x15);
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.PortfolioSingle_Details {
+  position: sticky;
+  top: var(--header-spacing--scrolled);
+}
+
+.PortfolioSingle_Details dl {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family-heading);
+
+  & dt {
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    font-size: var(--Typography-XXS);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  & dd {
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    color: var(--palette-mid);
+    font-size: var(--Typography-M);
+    & + dt {
+      margin-top: var(--Spacings-x4);
+    }
+  }
+}
+
+.PortfolioSingle_Details dl + .Button {
+  margin-top: var(--Spacings-x4);
+}
+
+/* .PortfolioSingle_Info {
+}
+.PortfolioSingle_Excerpt {
+} */
+
+.RelatedWork {
+  margin-top: var(--flow);
+}
+
+.RelatedWork__Title {
+  margin-bottom: var(--Spacings-x4);
+}
+
+@media (--mq-tablet-and-up) {
+  .PortfolioSingle__Intro {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

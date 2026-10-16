@@ -1,0 +1,51 @@
+/* Main Content */
+.MainContent {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: var(--palette-action);
+  transition: all var(--global-transition);
+  text-decoration: underline;
+  cursor: pointer;
+  & svg {
+    transition: fill var(--global-transition);
+  }
+  &:hover {
+    color: var(--palette-hover);
+    text-decoration-color: transparent;
+  }
+  /* Keyboard focus ring, in the link's own colour so it works on any background */
+  &:focus-visible {
+    outline: solid 2px currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* Media */
+img,
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+a img {
+  outline: 0;
+}
+
+mark {
+  color: var(--palette-light);
+  background-color: transparent;
+}
+
+::selection {
+  background-color: var(--palette-action);
+  color: var(--palette-light);
+}
+
+hr {
+  border: solid 1px var(--palette-hover);
+}

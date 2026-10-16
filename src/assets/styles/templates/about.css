@@ -1,0 +1,40 @@
+.AboutGrid {
+  display: grid;
+  gap: var(--Spacings-x16);
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.AboutCol:first-child {
+  position: relative;
+}
+
+.About__Lead {
+  position: sticky;
+  top: var(--header-spacing--scrolled);
+  background-color: var(--palette-mid);
+  color: var(--palette-light);
+  padding: 0 var(--Spacings-x8);
+  border-radius: var(--border-radius);
+  padding-bottom: 125px;
+  margin-bottom: 100px;
+}
+
+.About__Image {
+  max-width: 250px;
+  height: auto;
+  border-radius: 99em;
+  margin: 0 auto;
+  /* border: solid 10px var(--palette-hover); */
+  outline: solid 10px var(--palette-light);
+  position: absolute;
+  bottom: -125px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (--mq-tablet-and-up) {
+  .AboutGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,183 +1,207 @@
+/*
+  Header
+  Mobile: logo left, menu toggle right. The nav drops down as a full-width panel.
+  Tablet and up: logo left, nav listed horizontally on the right, no toggle.
+  An inline script in <head> adds .js to <html>, so the menu is collapsed before first
+  paint. Without JS the toggle stays hidden and the nav simply stays visible.
+*/
+
 .Header {
-  margin-bottom: 70px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: var(--Spacings-x16);
   view-transition-name: header;
 }
 
-.Header .Container {
+.Header__Inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--gap);
   padding: var(--gap) 0;
+  /* Let the mobile panel position against .Header, not the container */
+  position: static;
+  container-type: normal;
 }
 
-.Header__Site-Title {
-  color: var(--color-alt);
+/* Logo */
+.Header__Logo {
   display: block;
+  flex: 0 0 auto;
   width: 100px;
+  color: var(--palette-action);
+  text-decoration: none;
+
   & svg {
+    display: block;
+    width: 100%;
+    height: auto;
     aspect-ratio: 1908/869;
   }
-  &::after {
+
+  @media (--mq-tablet-and-up) {
+    width: 160px;
+  }
+}
+
+/* Menu toggle (mobile only) */
+.Header__Toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--Spacings-x10);
+  height: var(--Spacings-x10);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--palette-dark);
+  cursor: pointer;
+
+  @media (--mq-tablet-and-up) {
     display: none;
   }
 }
 
-/* Main Nav */
-.Header__Nav {
-  background-color: var(--color-main);
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  padding: 50px 24px;
-  text-align: right;
-  transition: transform var(--global-transition);
-  z-index: 5;
-  transform: translateX(100%);
-  padding-top: 120px;
-  &[data-menu='open'] {
-    transform: translateX(0);
-  }
-
-  & ul {
-    text-transform: uppercase;
-    font-family: var(--font-body);
-    list-style-type: none;
-    margin: 0;
-    & li {
-      margin: 0 0 10px 0;
-      padding: 0;
-    }
-  }
-
-  & a {
-    font-size: 24px;
-    font-family: var(--font-family-heading);
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    display: block;
-    color: var(--color-secondary);
-    &:hover {
-      color: var(--color-alt);
-    }
-    &::after {
-      display: none;
-    }
-  }
-
-  @media (--mq-landscape-tablet-and-up) {
-    position: static;
-    width: auto;
-    height: auto;
-    display: block;
-    transform: translate(0, 0);
-    background-color: transparent;
-    padding: 0;
-
-    & ul {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      & li {
-        margin: 0 0 0 16px;
-        padding: 0;
-      }
-    }
-
-    & a {
-      font-size: 14px;
-      color: var(--color-alt);
-      &:hover {
-        color: var(--color-main);
-      }
-    }
-  }
+/* No JS: the nav stays visible, so the toggle isn't needed */
+html:not(.js) .Header__Toggle {
+  display: none;
 }
 
-.Header__Nav a[aria-current]:not([aria-current='false']) {
-  color: var(--color-alt);
-}
-
-@media (--mq-landscape-tablet-and-up) {
-  .Header__Nav a[aria-current]:not([aria-current='false']) {
-    color: var(--color-main);
-  }
-}
-
-/* Toggles */
-.Header__NavToggle,
-.Header__ThemeToggle {
-  display: block;
-  cursor: pointer;
-  border: 0;
-}
-
-/* Menu Toggle */
-.Header__NavToggle {
-  z-index: 10;
-  width: 40px;
-  height: 24px;
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
+.Header__ToggleIcon {
   position: relative;
+  display: block;
+  width: var(--Spacings-x8);
+  height: var(--Spacings-x5);
 
-  & b {
-    display: block;
-    width: 100%;
-    background-color: var(--color-alt);
-    border-radius: var(--border-radius);
-    height: 4px;
+  & span {
     position: absolute;
-    top: 0;
     left: 0;
-    transition: all var(--global-transition);
+    width: 100%;
+    height: 3px;
+    border-radius: var(--border-radius);
+    background-color: currentColor;
+    transition: transform var(--global-transition), opacity var(--global-transition), top var(--global-transition);
+  }
 
-    &:nth-child(1) {
-      width: 35%;
-    }
-
-    &:nth-child(2) {
-      top: 10px;
-    }
-    &:nth-child(3) {
-      top: 20px;
-      width: 75%;
-    }
+  & span:nth-child(1) {
+    top: 0;
+  }
+  & span:nth-child(2) {
+    top: calc(50% - 1.5px);
+  }
+  & span:nth-child(3) {
+    top: calc(100% - 3px);
   }
 }
 
-.Header__NavToggle[data-menu='open'] b {
+/* Toggle becomes an X when open */
+.Header[data-menu='open'] .Header__ToggleIcon span {
   &:nth-child(1) {
-    width: 100%;
+    top: calc(50% - 1.5px);
     transform: rotate(45deg);
-    top: 10px;
   }
-
   &:nth-child(2) {
-    width: 0;
     opacity: 0;
   }
   &:nth-child(3) {
-    width: 100%;
+    top: calc(50% - 1.5px);
     transform: rotate(-45deg);
-    top: 10px;
   }
 }
 
-@media (--mq-landscape-tablet-and-up) {
-  .Header__Site-Title {
-    width: 200px;
+/* Nav */
+.MainNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.MainNav__Item {
+  margin: 0;
+  padding: 0;
+}
+
+.MainNav__Link {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Mobile: full-width panel below the header row */
+@media (--mq-below-tablet) {
+  .Header__Nav {
+    flex-basis: 100%;
   }
-  .Header__NavToggle {
+
+  .js .Header__Nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: var(--Spacings-x6) var(--page-padding) var(--Spacings-x10);
+    background-color: var(--palette-dark);
+  }
+
+  .js .Header:not([data-menu='open']) .Header__Nav {
     display: none;
   }
+
+  .MainNav__Item + .MainNav__Item {
+    border-top: solid var(--border-width) var(--palette-mid);
+  }
+
+  .MainNav__Link {
+    padding: var(--Spacings-x3) 0;
+    font-size: var(--Typography-L);
+    color: var(--palette-dark);
+
+    &:hover,
+    &[aria-current='page'] {
+      color: var(--palette-action);
+    }
+  }
+
+  /* Once JS has collapsed the nav into the dark panel */
+  .js .MainNav__Link {
+    color: var(--palette-light);
+
+    &:hover,
+    &[aria-current='page'] {
+      color: var(--palette-hover);
+    }
+  }
 }
 
-body.nav-open {
-  overflow: hidden;
-  position: fixed;
+/* Tablet and up: horizontal list, pushed to the right */
+@media (--mq-tablet-and-up) {
+  .Header__Nav {
+    margin-left: auto;
+  }
+
+  .MainNav {
+    display: flex;
+    align-items: center;
+    gap: var(--Spacings-x8);
+  }
+
+  .MainNav__Link {
+    padding: var(--Spacings-x2) 0;
+    font-size: var(--Typography-XS);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--palette-dark);
+    border-bottom: solid 2px transparent;
+
+    &:hover {
+      color: var(--palette-action);
+    }
+
+    &[aria-current='page'] {
+      color: var(--palette-action);
+      border-bottom-color: currentColor;
+    }
+  }
 }

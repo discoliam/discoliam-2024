@@ -85,13 +85,17 @@
 
     <meta name='theme-color' content='#fffbe9'>
     <meta name='msapplication-TileColor' content='#255B59'>
+    {%- comment -%} Lets CSS collapse the mobile menu before first paint, avoiding a layout shift {%- endcomment -%}
+    <script>document.documentElement.classList.add('js')</script>
   </head>
   <body>
-    <a href='#main-content' class='Button sr-only'>Skip to main content</a>
+    <a href='#main-content' class='Button SkipLink'>Skip to main content</a>
     {% svgsprite %}
     {% include 'header.liquid' %}
-    {% block content %}
-    {% endblock %}
+    <main id='main-content' tabindex='-1'>
+      {% block content %}
+      {% endblock %}
+    </main>
     {% include 'footer.liquid' %}
     <script src='/assets/main.js'></script>
     <script src='https://unpkg.com/website-carbon-badges@1.1.3/b.min.js' async defer></script>

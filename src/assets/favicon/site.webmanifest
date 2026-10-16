@@ -1,21 +1,21 @@
 {
-  "name": "DiscoLiam",
-  "short_name": "DiscoLiam",
-  "start_url": "https://discoliam.com",
-  "description": "Liam Richardson builds award-winning Websites, Design Systems, and Installations for clients around the globe.",
+  "name": "Discoliam – Liam Richardson, Front-End Developer",
+  "short_name": "Discoliam",
+  "start_url": "/",
+  "description": "Liam Richardson is a freelance front-end developer in Bristol, UK, building fast, accessible websites and design systems.",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/assets/favicon/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-384x384.png",
+      "src": "/assets/favicon/android-chrome-384x384.png",
       "sizes": "384x384",
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#fffbe9",
+  "background_color": "#fffbe9",
   "display": "standalone"
 }

@@ -1,0 +1,34 @@
+{% comment %}
+  Portfolio card. Expects `entry` (an eleventyNavigation entry under Portfolio).
+  Optional: `headingLevel` (defaults to h2)
+{% endcomment %}
+{% assign entrySlug = entry.title | slugify %}
+{% assign cardHeading = headingLevel | default: 'h2' %}
+<li class='PortfolioNav__Item'>
+  {% comment %} Duplicate of the case study button below, so hidden from keyboard and screen readers {% endcomment %}
+  <a class='PortfolioNav__Image' href='{{ entry.url }}' tabindex='-1' aria-hidden='true'>
+    {% capture portfolioImage %}./src/assets/images/bg-{{entrySlug}}.jpg{% endcapture %}
+    {% image portfolioImage, "", "", "(min-width: 768px) 50vw, 100vw" %}
+
+  </a>
+  <div class='PortfolioNav__Content'>
+    <{{ cardHeading }} class='PortfolioNav__Title'>
+      {{ entry.title }}
+    </{{ cardHeading }}>
+    <p class='PortfolioNav__Client'>
+      <strong>Client:</strong> {{ entry.client -}}
+    </p>
+    <ul class='PortfolioNav__Tags'>
+      {% for tag in entry.tags %}
+        <li class='Label'>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    <div class="PortfolioNav__Excerpt">
+      {{ entry.excerpt }}
+    </div>
+
+  </div>
+  <a class='Button Button--hollow' href='{{ entry.url }}'>
+    Read the case study<span class='sr-only'>: {{ entry.title }}</span>
+  </a>
+</li>

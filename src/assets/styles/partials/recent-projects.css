@@ -1,0 +1,19 @@
+.RecentProjects {
+  margin-top: var(--flow);
+}
+
+.RecentProjects__Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Spacings-x8);
+  flex-direction: column;
+  padding-bottom: var(--Spacings-x8);
+}
+
+@media (--mq-tablet-and-up) {
+  .RecentProjects__Header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

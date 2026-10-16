@@ -3,53 +3,63 @@
 {%- block content -%}
 
 <div class='Container'>
-  <div class='Page__Header Page__Header--centered'>
-    <div>
-      <h1>{{ pageTitle }}</h1>
-    </div>
+  <div class='PortfolioSingle__Header'>
+    <h1>{{ pageTitle }}</h1>
+    {% image hero, pageTitle, "PortfolioSingle__Image", "100vw", "eager" %}
   </div>
 
-  {% image hero, pageTitle, "Portfolio__Image" %}
 
-  <div class='Portfolio__Intro'>
-    <div class='Project__Info'>
-      <dl>
-        <dt>Project</dt>
-        <dd>{{ pageTitle }}</dd>
-        {% if eleventyNavigation.client %}
-          <dt>Client</dt>
-          <dd>{{ eleventyNavigation.client }}</dd>
-        {% endif %}
-        {% if year %}
-          <dt>Year</dt>
-          <dd>{{ year }}</dd>
-        {% endif %}
-        {% if eleventyNavigation.tags %}
-          <dt>Tech Stack</dt>
-          <dd>
-            {% for tag in eleventyNavigation.tags %}
-              <span class='Label'>{{ tag }}</span>
-            {% endfor %}
-          </dd>
-        {% endif %}
+  <div class='PortfolioSingle__Intro'>
+    <div class='PortfolioSingle_Info'>
+
+      <div class="PortfolioSingle_Details">
+        <dl>
+          <dt>Project</dt>
+          <dd>{{ pageTitle }}</dd>
+          {% if eleventyNavigation.client %}
+            <dt>Client</dt>
+            <dd>{{ eleventyNavigation.client }}</dd>
+          {% endif %}
+          {% if year %}
+            <dt>Year</dt>
+            <dd>{{ year }}</dd>
+          {% endif %}
+          {% if eleventyNavigation.tags %}
+            <dt>Tech Stack</dt>
+            <dd>
+              {% for tag in eleventyNavigation.tags %}
+                <span class='Label'>{{ tag }}</span>
+              {% endfor %}
+            </dd>
+          {% endif %}
+        </dl>
         {% if website %}
-          <dt>Website</dt>
-          <dd>
-            <a href='{{website}}' target='_blank' rel='noopener'>
-              {{- website }}
+            <a href='{{website}}' target='_blank' rel='noopener' class="Button">
+              View Live project
               <span class='sr-only'> - Opens in new window</span></a
             >
-          </dd>
         {% endif %}
-      </dl>
-    </div>
-    <div class='Project__Excerpt'>
-      <div class='ContentWrapper'>
-        <p class='Lead'>{{ eleventyNavigation.excerpt }}</p>
-        {{- content -}}
       </div>
+
+    </div>
+    <div class='PortfolioSingle_Excerpt ugc'>
+      <div class='Lead'>{{ eleventyNavigation.excerpt }}</div>
+      {{- content -}}
     </div>
   </div>
+
+  {% assign portfolioEntries = collections.all | eleventyNavigation: 'Portfolio' %}
+  {% assign related = portfolioEntries | relatedProjects: eleventyNavigation.key, 3 %}
+  {% if related.size > 0 %}
+    <section class='RelatedWork' aria-labelledby='related-work-title'>
+      <h2 class="RelatedWork__Title" id='related-work-title'>Related projects</h2>
+      <ul class='PortfolioNav PortfolioNav--related'>
+        {% for entry in related %}
+          {% include 'portfolio-card.liquid', entry: entry, headingLevel: 'h3'%}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
 </div>
 
 {%- endblock -%}

@@ -2,16 +2,16 @@
 label {
   display: block;
   font-family: var(--font-family-heading);
-  font-size: var(--font-size--lead);
+  font-size: var(--Typography-M);
   font-weight: 900;
   letter-spacing: 0.01em;
-  margin: 0 0 0.5em 0;
-  color: var(--color-main);
+  margin: 0 0 var(--Spacings-x2) 0;
+  color: var(--palette-mid);
 }
 
 [title='required'] {
   text-decoration: none;
-  color: var(--color-alt);
+  color: var(--palette-action);
 }
 
 /* Input Types */
@@ -29,18 +29,27 @@ input[type='time'],
 input[type='url'],
 input[type='week'],
 textarea {
+  box-sizing: border-box;
   width: 100%;
-  padding: 10px;
+  padding: var(--Spacings-x3);
   background-color: var(--white);
-  border: solid 1px var(--color-main);
+  color: var(--palette-dark);
+  border: var(--border);
   border-radius: var(--border-radius);
-  font-size: var(--font-size-base);
+  font-family: var(--font-family-body);
+  font-size: var(--Typography-S);
+  transition: border-color var(--global-transition), box-shadow var(--global-transition);
+
+  &::placeholder {
+    color: var(--palette-dark);
+    opacity: 0.6;
+  }
 
   /* Focus Styles - uses outline for A11y */
   &:focus-visible {
-    outline: solid 1px var(--color-secondary);
-    border-color: var(--color-secondary);
-    box-shadow: 0px 0px 5px 0px var(--color-secondary);
+    outline: solid 2px var(--palette-action);
+    outline-offset: 2px;
+    border-color: var(--palette-action);
   }
 
   &:disabled {
@@ -50,11 +59,12 @@ textarea {
 }
 
 textarea {
-  min-height: 200px;
+  min-height: calc((200 / 16) * 1rem);
+  resize: vertical;
 }
 
 .InputWrap {
-  margin-bottom: 2em;
+  margin-bottom: var(--Spacings-x8);
 }
 
 /* Accent Colour for form elements */
@@ -62,5 +72,5 @@ input[type='checkbox'],
 input[type='radio'],
 input[type='range'],
 progress {
-  accent-color: var(--color-main);
+  accent-color: var(--palette-mid);
 }
