@@ -63,6 +63,12 @@ footer {
   margin: 0;
 }
 
+/* Padding keeps each link at least 24px tall, for comfortable tap targets */
+.FooterNav__Link {
+  display: inline-block;
+  padding: var(--Spacings-x1) 0;
+}
+
 .Footer__Details {
   text-align: center;
 }

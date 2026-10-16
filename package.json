@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "cross-env NODE_ENV=development BROWSERSLIST_ENV=development BROWSERSLIST_CONFIG=./.browserslistrc run-p -l clean dev:*",
+    "dev": "npm run clean && cross-env NODE_ENV=development BROWSERSLIST_ENV=development BROWSERSLIST_CONFIG=./.browserslistrc run-p -l dev:*",
     "dev:webpack": "webpack --config webpack.js --watch",
     "dev:eleventy": "npx @11ty/eleventy --serve",
-    "build": "cross-env NODE_ENV=production BROWSERSLIST_ENV=production BROWSERSLIST_CONFIG=./.browserslistrc run-p -l clean build:*",
+    "build": "npm run clean && cross-env NODE_ENV=production BROWSERSLIST_ENV=production BROWSERSLIST_CONFIG=./.browserslistrc run-p -l build:*",
     "build:webpack": "webpack --config webpack.js --progress",
-    "build:elventy": "eleventy",
+    "build:eleventy": "eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -43,9 +43,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.1.0",
-    "axios": "^1.4.0",
     "dotenv": "^16.3.1",
     "dracula-prism": "^2.1.13",
     "flat-cache": "^3.0.4",

@@ -2,7 +2,8 @@
   Header
   Mobile: logo left, menu toggle right. The nav drops down as a full-width panel.
   Tablet and up: logo left, nav listed horizontally on the right, no toggle.
-  menu.js adds [data-menu] to .Header, so without JS the nav simply stays visible.
+  An inline script in <head> adds .js to <html>, so the menu is collapsed before first
+  paint. Without JS the toggle stays hidden and the nav simply stays visible.
 */
 
 .Header {
@@ -58,13 +59,14 @@
   color: var(--palette-dark);
   cursor: pointer;
 
-  &[hidden] {
-    display: none;
-  }
-
   @media (--mq-tablet-and-up) {
     display: none;
   }
+}
+
+/* No JS: the nav stays visible, so the toggle isn't needed */
+html:not(.js) .Header__Toggle {
+  display: none;
 }
 
 .Header__ToggleIcon {
@@ -134,7 +136,7 @@
     flex-basis: 100%;
   }
 
-  .Header[data-menu] .Header__Nav {
+  .js .Header__Nav {
     position: absolute;
     top: 100%;
     left: 0;
@@ -143,7 +145,7 @@
     background-color: var(--palette-dark);
   }
 
-  .Header[data-menu='closed'] .Header__Nav {
+  .js .Header:not([data-menu='open']) .Header__Nav {
     display: none;
   }
 
@@ -163,7 +165,7 @@
   }
 
   /* Once JS has collapsed the nav into the dark panel */
-  .Header[data-menu] .MainNav__Link {
+  .js .MainNav__Link {
     color: var(--palette-light);
 
     &:hover,

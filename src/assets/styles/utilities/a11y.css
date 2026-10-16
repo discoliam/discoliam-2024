@@ -11,12 +11,21 @@
   border: 0 !important;
 }
 
-/* Skip to Content */
-.skip-to-content-link:focus {
+/* Skip to Content - off screen until it receives keyboard focus.
+   Doubled class beats a.Button's position: relative */
+.SkipLink.SkipLink {
+  position: absolute;
+  top: var(--Spacings-x2);
+  left: var(--Spacings-x2);
   z-index: 9999;
-  position: inherit;
-  overflow: auto;
-  width: auto;
-  height: auto;
-  clip: auto;
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
+/* Focused programmatically by the skip link, so no focus ring needed */
+main:focus {
+  outline: none;
 }

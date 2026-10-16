@@ -18,8 +18,9 @@ async function imageShortcode(
   }
 
   let metadata = await Image(src, {
-    widths: [300, 600],
-    formats: ['webp', 'jpeg', 'png'],
+    // 1200 keeps full-width heroes sharp; WebP and JPEG cover every browser
+    widths: [300, 600, 1200],
+    formats: ['webp', 'jpeg'],
     outputDir: 'dist/assets/images',
     urlPath: '/assets/images',
   })
@@ -42,7 +43,7 @@ async function imageShortcode(
         width="${highsrc.width}"
         height="${highsrc.height}"
         alt="${alt}"
-        class="${className}"
+        ${className ? `class="${className}"` : ''}
         loading="${loading}"
         ${loading === 'eager' ? 'fetchpriority="high"' : ''}
         decoding="async">
@@ -54,6 +55,15 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(svgSprite, {
     path: './src/assets/svgs',
+    // The plugin's own shortcode outputs broken aria-labelledby references and
+    // duplicate ids, so it's parked here and replaced by `svg` below
+    svgShortcode: 'svgPluginDefault',
+  })
+  // Icons are decorative: every usage has visible or sr-only text alongside it
+  eleventyConfig.addShortcode('svg', (name, classes = '') => {
+    if (!name) throw new Error('svg shortcode: name of SVG must be specified')
+    const classAttr = classes ? ` class="${classes}"` : ''
+    return `<svg${classAttr} aria-hidden="true" focusable="false"><use href="#svg-${name}"></use></svg>`
   })
   eleventyConfig.addLiquidShortcode('image', imageShortcode)
   eleventyConfig.addJavaScriptFunction('image', imageShortcode)
@@ -103,6 +113,8 @@ module.exports = (eleventyConfig) => {
   )
   eleventyConfig.addPassthroughCopy({
     'src/assets/favicon': '/assets/favicon',
+    // Browsers request /favicon.ico from the root by default
+    'src/assets/favicon/favicon.ico': '/favicon.ico',
   })
   eleventyConfig.setLibrary(
     'md',

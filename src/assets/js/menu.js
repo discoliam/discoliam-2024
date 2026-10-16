@@ -24,9 +24,8 @@ export default function menuInit() {
     if (returnFocus) toggle.focus()
   }
 
-  // Enhance: collapse the nav and reveal the toggle
+  // CSS has already collapsed the nav via html.js; sync the state attributes
   setOpen(false)
-  toggle.hidden = false
 
   toggle.addEventListener('click', () => setOpen(!isOpen()))
 

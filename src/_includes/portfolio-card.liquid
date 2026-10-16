@@ -5,9 +5,10 @@
 {% assign entrySlug = entry.title | slugify %}
 {% assign cardHeading = headingLevel | default: 'h2' %}
 <li class='PortfolioNav__Item'>
-  <a class='PortfolioNav__Image' href='{{ entry.url }}'>
+  {% comment %} Duplicate of the case study button below, so hidden from keyboard and screen readers {% endcomment %}
+  <a class='PortfolioNav__Image' href='{{ entry.url }}' tabindex='-1' aria-hidden='true'>
     {% capture portfolioImage %}./src/assets/images/bg-{{entrySlug}}.jpg{% endcapture %}
-    {% image portfolioImage, "" %}
+    {% image portfolioImage, "", "", "(min-width: 768px) 50vw, 100vw" %}
 
   </a>
   <div class='PortfolioNav__Content'>
