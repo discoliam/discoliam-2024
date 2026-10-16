@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Wordpress website for Woven | Discoliam
+title: WordPress website for Woven | Discoliam
 pageTitle: Woven
 description: 'Case study: a WordPress site with smooth scrolling and page transitions for Woven, a video production company, built with Oku Studio.'
 year: 2023

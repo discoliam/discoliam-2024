@@ -23,4 +23,4 @@ I completely redeveloped their [Shopify](https://www.shopify.com/) theme, taking
 
 To complement this, I built a suite of UI components in [Vue 3](https://vuejs.org/), documented in [Storybook](https://storybook.js.org/), to support their fully custom customer portal. Having a shared component library meant subscription and order management features could be built quickly and consistently, greatly improving those workflows for customers.
 
-On top of this, I worked closwly with the marketing and growth teams to build new blog and landing pages, increasing SEO and marketing visiblity whilst supporting new product launch campaigns.
+On top of this, I worked closely with the marketing and growth teams to build new blog and landing pages, increasing SEO and marketing visibility whilst supporting new product launch campaigns.

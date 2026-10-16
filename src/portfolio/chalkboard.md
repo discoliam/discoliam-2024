@@ -3,7 +3,7 @@ layout: 'layouts/portfolio.liquid'
 title: Craft CMS updates for Chalkboard | Discoliam
 pageTitle: Chalkboard
 description: 'Case study: ongoing Craft CMS development for Chalkboard, including new features and thousands of auto-generated landing pages.'
-year: 2020 - 2023
+year: 2023
 hero: './src/assets/images/bg-chalkboard.jpg'
 eleventyNavigation:
   key: Chalkboard

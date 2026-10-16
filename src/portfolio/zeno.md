@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Wordpress Website for Zeno | Discoliam
+title: WordPress website for Zeno | Discoliam
 pageTitle: Zeno
 description: 'Case study: a new WordPress website for Zeno, a solar and home energy company, built with Massive Media after its rebrand.'
 year: 2021

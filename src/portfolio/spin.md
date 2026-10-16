@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Spin | Discoliam
+title: Webflow accessibility audit for Spin | Discoliam
 pageTitle: Spin
 description: 'Case study: accessibility audit and remediation for the Spin website on Webflow, working with PNW and an external auditing team.'
 year: 2022
