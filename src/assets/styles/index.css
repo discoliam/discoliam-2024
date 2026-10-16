@@ -21,6 +21,7 @@
 @import 'templates/centered.css';
 @import 'templates/portfolio-single.css';
 @import 'templates/contact.css';
+@import 'templates/about.css';
 
 /* Vendor */
 @import '../../../node_modules/dracula-prism/dist/css/dracula-prism.css';

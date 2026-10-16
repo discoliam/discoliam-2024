@@ -20,7 +20,7 @@
 
 .PortfolioSingle_Details {
   position: sticky;
-  top: var(--flow);
+  top: var(--header-spacing--scrolled);
 }
 
 .PortfolioSingle_Details dl {
