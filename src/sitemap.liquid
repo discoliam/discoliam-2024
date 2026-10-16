@@ -1,0 +1,15 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+# No <lastmod>: file dates aren't reliable on Netlify, and a wrong lastmod is worse than none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for entry in collections.all %}
+  {%- unless entry.data.noindex or entry.url == false %}
+  <url>
+    <loc>{{ site.url }}{{ entry.url }}</loc>
+  </url>
+  {%- endunless %}
+{%- endfor %}
+</urlset>

@@ -30,4 +30,4 @@ There are no tests. ESLint, Stylelint and Prettier config files exist, but there
 - Cards render via `src/_includes/portfolio-card.liquid`, shared by the portfolio listing, the homepage "Recent projects", case study "Related projects" (the `relatedProjects` filter in `.eleventy.js`, which weights rarer shared tags higher) and service pages.
 - Service pages (`src/services/*.md`) use `layouts/service.liquid`, list related projects by matching `serviceTags` against each project's tags and `services` text, and appear in the footer via `eleventyNavigation` with `parent: Services`.
 - `{% svg "name" %}` is a custom shortcode (overriding the sprite plugin's) that outputs a decorative, `aria-hidden` icon, so always pair it with visible or `sr-only` text.
-- Set `noindex: true` in front matter to add a robots noindex meta tag; also add the page to the sitemap `exclude` list in `netlify.toml`.
+- Set `noindex: true` in front matter to add a robots noindex meta tag; `src/sitemap.liquid` also leaves those pages out of the sitemap automatically.

@@ -1,6 +1,6 @@
 ---
 title: 'Website Performance, Accessibility and SEO Audits | Discoliam'
-description: 'Technical website audits from a Bristol-based front-end developer, covering performance, accessibility, technical SEO and environmental impact, with clear fixes.'
+description: 'Technical website audits from a Bristol front-end developer, covering performance, accessibility, technical SEO and environmental impact, with clear fixes.'
 layout: 'layouts/service.liquid'
 pageTitle: Technical Audits
 serviceTags: ['A11y', 'Accessibility', 'Performance']
