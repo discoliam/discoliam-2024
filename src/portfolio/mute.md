@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Mute Animation | Discoliam
+title: WordPress website for Mute Animation | Discoliam
 pageTitle: Mute Animation
 description: 'Case study: an animation-led WordPress site for Mute Animation, built with Oku Studio using Lottie and Barba.js.'
 year: 2023

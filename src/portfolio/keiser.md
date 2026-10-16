@@ -1,8 +1,8 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Keiser UK + Keiser Aus | Discoliam
-pageTitle: Keiser UK + Keiser Aus
-description: 'Case study: WordPress development for Keiser UK, presenting pneumatic air-resistance fitness equipment to gyms, studios and rehab settings.'
+title: Wordpress and Shopify development for Keiser | Discoliam
+pageTitle: Keiser UK and AUS websites
+description: 'Case study: WordPress development for Keiser, presenting pneumatic air-resistance fitness equipment to gyms, studios and rehab settings.'
 year: # 2025
 website: https://keiseruk.com/
 hero: './src/assets/images/bg-keiser.jpg'
@@ -22,3 +22,7 @@ Keiser's fitness equipment uses pneumatic air resistance rather than weight stac
 I built a custom WordPress theme with a flexible set of content blocks, so the team can create pages for each market (performance, commercial gyms, cycling, medical and rehab, hospitality) that pull together the right products, case studies and calls to action. Product pages are structured so the specs, features and media are consistent across the whole catalogue.
 
 Keiser's audience is mostly gym owners, coaches and clinicians researching big purchases, so I made sure the site is quick to load, easy to navigate and accessible, and that enquiry forms are easy to find from every page.
+
+The marketing website is supported by a small and focused webshop used powered by Shopify, allowing us to focus UX decisions on our key audiences, those looking to purchase equipment on mass via traditional sales channels, and a small but growing home consumer market.
+
+The UK website was so well received, the framework of the site was reused for the Australian market, with a couple of extra features to suppot the differences in this key growth market for Keiser.

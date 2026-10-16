@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Sentient Media | Discoliam
+title: Multilanguage Wordpress site for Sentient Media | Discoliam
 pageTitle: Sentient Media
 description: 'Case study: WordPress rebuild and performance work for Sentient Media, a nonprofit newsroom covering animal agriculture.'
 year: 2023
@@ -12,7 +12,7 @@ eleventyNavigation:
   order: 8
   client: Sentient Media
   services: 'Full Stack Development'
-  tags: ['WordPress', 'Gutenberg', 'ACF', 'CSS', 'Performance']
+  tags: ['WordPress', 'Gutenberg', 'Internationalization']
   excerpt: <p>A fresh WordPress build for Sentient Media's rebrand, making their nonprofit newsroom faster, leaner and greener.</p>
   website: https://sentientmedia.org/
 ---
@@ -21,4 +21,6 @@ Sentient Media is a nonprofit news organisation reporting on animal agriculture 
 
 Rather than reskinning what was there, we started fresh with a new theme built around WordPress's block editor (Gutenberg) and [ACF](https://www.advancedcustomfields.com/) blocks, giving the editorial team the flexibility they need for long-form journalism. Alongside the build, I did a significant tidy-up of the database and existing content, removing old plugin data and sorting out years of inconsistent formatting.
 
-The result was a much leaner site. After launch, Lighthouse scores improved dramatically and both page weight and database size dropped. For an organisation reporting on environmental issues, a lighter, lower-carbon website was a big win.
+The site serves content in two languages, English and Spanish. We utlised and improved the exsiting [WPML](https://wpml.org/) plugin and approach, meaning that excisting content and workflows where uneffected by the new website build, but benefited from the vast improvements we made across the site.
+
+The result was a much leaner site. After launch, Lighthouse scores improved dramatically and both page weight and database size dropped. For an organisation reporting on environmental issues, a lighter, lower-carbon website was a big win, and allowed them to unlock extra funnding for green inititives.

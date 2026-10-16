@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Bower Collective | Discoliam
+title: Shopify and Design System development for Bower Collective | Discoliam
 pageTitle: Bower Collective
 description: 'Case study: a custom Shopify theme and Vue 3 component library in Storybook for Bower Collective, a refillable household products subscription.'
 year: 2022
@@ -19,6 +19,8 @@ eleventyNavigation:
 
 Bower Collective delivers refillable household and personal care products in reusable packaging, mostly by subscription. During my ongoing relationship with them, I've worked closely with their CTO on both their storefront and the customer portal that powers their subscriptions.
 
-I completely redeveloped their [Shopify](https://www.shopify.com/) theme, taking them from a customised off-the-shelf theme to a brand new build tailored to their business. The new theme is leaner, easier to extend and noticeably faster, and it improved both performance and accessibility scores.
+I completely redeveloped their [Shopify](https://www.shopify.com/) theme, taking them from a customised off-the-shelf theme to a brand new build tailored to their business, preparing them for the [Online Store 2.0](https://www.shopify.com/uk/partners/blog/shopify-online-store) upgrade. The new theme is leaner, easier to extend and noticeably faster, and it improved both performance and accessibility scores.
 
 To complement this, I built a suite of UI components in [Vue 3](https://vuejs.org/), documented in [Storybook](https://storybook.js.org/), to support their fully custom customer portal. Having a shared component library meant subscription and order management features could be built quickly and consistently, greatly improving those workflows for customers.
+
+On top of this, I worked closwly with the marketing and growth teams to build new blog and landing pages, increasing SEO and marketing visiblity whilst supporting new product launch campaigns.

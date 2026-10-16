@@ -19,6 +19,7 @@
 @import 'partials/footer.css';
 
 @import 'templates/centered.css';
+@import 'templates/home.css';
 @import 'templates/portfolio-single.css';
 @import 'templates/contact.css';
 @import 'templates/about.css';

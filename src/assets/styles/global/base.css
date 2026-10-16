@@ -43,7 +43,7 @@ mark {
 
 ::selection {
   background-color: var(--palette-action);
-  color: var(--palette-dark);
+  color: var(--palette-light);
 }
 
 hr {

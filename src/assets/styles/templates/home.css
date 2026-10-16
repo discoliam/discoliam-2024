@@ -1,0 +1,34 @@
+.Introduction {
+  background-color: var(--palette-mid);
+  color: var(--palette-light);
+  padding: var(--Spacings-x8);
+  border-radius: var(--border-radius);
+  display: block;
+  max-width: var(--thin-width);
+  margin-left: auto;
+  margin-right: auto;
+
+  & h1 {
+    color: var(--palette-liam);
+    padding-bottom: var(--Spacings-x4);
+  }
+
+  & img {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    border-radius: 99em;
+    margin: 0 auto;
+  }
+
+  & strong {
+    color: var(--palette-hover);
+  }
+
+  & a {
+    color: var(--palette-hover);
+    &:hover {
+      color: var(--palette-action);
+    }
+  }
+}

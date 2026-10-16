@@ -15,6 +15,7 @@
 }
 
 .Contact__Info {
+  position: relative;
   @media (--mq-tablet-and-up) {
     grid-column: 8 / span 5;
   }
@@ -49,6 +50,8 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  position: sticky;
+  top: var(--header-spacing--scrolled);
 
   & li {
     margin-bottom: var(--Spacings-x8);

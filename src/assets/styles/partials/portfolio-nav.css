@@ -52,7 +52,7 @@
   font-size: var(--Typography-S);
 }
 
-@media (--mq-mobile-and-up) {
+@media (--mq-tablet-and-up) {
   .PortfolioNav {
     grid-template-columns: repeat(2, 1fr);
   }

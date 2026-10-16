@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/portfolio.liquid'
-title: Conan | Discoliam
+title: Interactive map for Conan | Discoliam
 pageTitle: Conan
 description: 'Case study: an interactive Leaflet map and AI text adventure for the official Conan the Barbarian website, built with Something Familiar.'
 year: 2023
@@ -12,7 +12,7 @@ eleventyNavigation:
   order: 9
   client: Something Familiar
   services: 'Full Stack Development'
-  tags: ['AI', 'Leaflet', 'WordPress', 'Bricks']
+  tags: ['AI', 'Leaflet Maps', 'WordPress', 'Bricks']
   excerpt: <p>An interactive map of the Hyborian Age and an AI text adventure game for the official Conan the Barbarian website.</p>
   website: https://conan.com/
 ---
