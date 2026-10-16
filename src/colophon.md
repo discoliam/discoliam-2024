@@ -22,15 +22,3 @@ Built using [11ty](https://www.11ty.dev/) with [Liquid](https://shopify.github.i
 Source code and more details available on [Github](https://github.com/discoliam/discoliam-2024).
 
 Hosted on [Netlify](https://www.netlify.com/).
-
-## Previous Versions
-
-I don't normally keep older versions of my website. But, I've managed to save a few more recent versions, if you're desperate to see work I now consider rather embarrassing.
-
-<!-- nofollow: these archived sites aren't maintained, so keep crawlers and SEO tools from treating them as part of this site -->
-<ul>
-  <li><a href="https://2022.discoliam.com/" rel="nofollow">2022</a></li>
-  <li><a href="https://2020.discoliam.com/" rel="nofollow">2020</a></li>
-  <li><a href="https://2018.discoliam.com/" rel="nofollow">2018</a></li>
-  <li><a href="https://2016.discoliam.com/" rel="nofollow">2016</a></li>
-</ul>
