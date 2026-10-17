@@ -1,0 +1,42 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+# See https://llmstxt.org. Built from page front matter, so new pages appear
+# automatically (noindex pages are left out, as in the sitemap)
+---
+{%- assign pages = collections.all | sort: 'data.eleventyNavigation.order' -%}
+# {{ site.author }} ({{ site.name }})
+
+> {{ site.description }}
+
+Liam is a freelance front-end developer and development lead based in Bristol, UK, with 16 years' experience building websites, design systems and applications for agencies and brands. He works with Shopify, WordPress, Craft CMS and headless/Jamstack stacks, with a focus on accessibility and performance. For new work, get in touch at {{ site.email }}.
+
+## Pages
+{% for entry in pages %}
+  {%- if entry.data.tags contains 'header' and entry.url != '/' and entry.data.noindex != true %}
+- [{{ entry.data.pageTitle }}]({{ site.url }}{{ entry.url }}): {{ entry.data.description }}
+  {%- endif %}
+{%- endfor %}
+
+## Services
+{% for entry in pages %}
+  {%- if entry.data.eleventyNavigation.parent == 'Services' and entry.data.noindex != true %}
+- [{{ entry.data.pageTitle }}]({{ site.url }}{{ entry.url }}): {{ entry.data.description }}
+  {%- endif %}
+{%- endfor %}
+
+## Portfolio case studies
+{% for entry in pages %}
+  {%- if entry.data.eleventyNavigation.parent == 'Portfolio' and entry.data.noindex != true %}
+  {%- assign nav = entry.data.eleventyNavigation %}
+- [{{ entry.data.pageTitle }}]({{ site.url }}{{ entry.url }}): {{ entry.data.description }}{% if nav.tags %} ({{ nav.tags | join: ', ' }}){% endif %}
+  {%- endif %}
+{%- endfor %}
+
+## Optional
+{% for entry in pages %}
+  {%- if entry.data.tags contains 'footer' and entry.data.noindex != true %}
+- [{{ entry.data.pageTitle }}]({{ site.url }}{{ entry.url }}): {{ entry.data.description }}
+  {%- endif %}
+{%- endfor %}
+- [Sitemap]({{ site.url }}/sitemap.xml)
