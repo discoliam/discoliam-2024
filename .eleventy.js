@@ -115,6 +115,8 @@ module.exports = (eleventyConfig) => {
     'src/assets/favicon': '/assets/favicon',
     // Browsers request /favicon.ico from the root by default
     'src/assets/favicon/favicon.ico': '/favicon.ico',
+    'src/964e35597f5dcb0b8f04bb7f95aa9125.txt':
+      '/964e35597f5dcb0b8f04bb7f95aa9125.txt',
   })
   eleventyConfig.setLibrary(
     'md',
