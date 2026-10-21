@@ -117,6 +117,7 @@ module.exports = (eleventyConfig) => {
     'src/assets/favicon/favicon.ico': '/favicon.ico',
     'src/964e35597f5dcb0b8f04bb7f95aa9125.txt':
       '/964e35597f5dcb0b8f04bb7f95aa9125.txt',
+    'src/BingSiteAuth.xml': '/BingSiteAuth.xml',
   })
   eleventyConfig.setLibrary(
     'md',
